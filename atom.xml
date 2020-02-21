@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-21T13:07:29.855Z</updated>
+  <updated>2020-02-21T13:11:17.560Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://yoursite.com/2020/02/21/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%EF%BC%9A%E4%BB%8E%E6%8A%93%E5%8C%85%E7%9A%84%E8%A7%92%E5%BA%A6/"/>
     <id>http://yoursite.com/2020/02/21/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%EF%BC%9A%E4%BB%8E%E6%8A%93%E5%8C%85%E7%9A%84%E8%A7%92%E5%BA%A6/</id>
     <published>2020-02-21T12:27:31.000Z</published>
-    <updated>2020-02-21T13:07:29.855Z</updated>
+    <updated>2020-02-21T13:11:17.560Z</updated>
     
-    <content type="html"><![CDATA[<p>OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)</p><p>先过一遍(天)书：</p><p><img src="/.com//OSI%E6%A8%A1%E5%9E%8B.png" alt="选择wifi"></p><p>下面开始动手利用 <a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> 抓包</p><hr><p>由于我是用笔记本+Wifi上网，所以监听Wifi</p><p>（其实我不太懂选哪个，但是我看只有 Wifi 和 Loopback 有峰，盲猜……</p><p><img src="/.com//%E9%80%89%E6%8B%A9wifi.png" alt="选择wifi"></p><p>下面访问 <a href="https://cn.bing.com/" target="_blank" rel="noopener">必应</a></p><p><img src="/.com//%E8%AE%BF%E9%97%AE%E5%BF%85%E5%BA%94.png" alt></p><p>中间四条是封包的详细信息</p><p>因为封包的字段其实是指向上一层的，以第一行的 Frame 举例：显然 Frame 帧 是数据链路层的东西，所以第一行的包是来自物理层的。</p><p><img src="/.com//%E7%89%A9%E7%90%86%E5%B1%82.png" alt></p><p>第二行的 Ethernet 以太网</p><p><img src="/.com//%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82.png" alt></p><p>第三行是 网络层 IP协议</p><p><img src="/.com//%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt></p><p>第四行是 传输层 TCP协议</p><p><img src="/.com//%E4%BC%A0%E8%BE%93%E5%B1%82.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)</p><p>先过一遍(天)书：</p><p><img src="/.com//OSI%E6%A8%A1%E5%9E%8B.png" alt="OSI模型"></p><p>下面开始动手利用 <a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> 抓包</p><hr><p>由于我是用笔记本+Wifi上网，所以监听Wifi</p><p>（其实我不太懂选哪个，但是我看只有 Wifi 和 Loopback 有峰，盲猜……</p><p><img src="/.com//%E9%80%89%E6%8B%A9wifi.png" alt="选择wifi"></p><p>下面访问 <a href="https://cn.bing.com/" target="_blank" rel="noopener">必应</a></p><p><img src="/.com//%E8%AE%BF%E9%97%AE%E5%BF%85%E5%BA%94.png" alt></p><p>中间四条是封包的详细信息</p><p>因为封包的字段其实是指向上一层的，以第一行的 Frame 举例：显然 Frame 帧 是数据链路层的东西，所以第一行的包是来自物理层的。</p><p><img src="/.com//%E7%89%A9%E7%90%86%E5%B1%82.png" alt></p><p>第二行的 Ethernet 以太网</p><p><img src="/.com//%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82.png" alt></p><p>第三行是 网络层 IP协议</p><p><img src="/.com//%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt></p><p>第四行是 传输层 TCP协议</p><p><img src="/.com//%E4%BC%A0%E8%BE%93%E5%B1%82.png" alt></p>]]></content>
     
     <summary type="html">
     
@@ -31,8 +31,8 @@
       
         &lt;p&gt;OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)&lt;/p&gt;
 &lt;p&gt;先过一遍(天)书：&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/.com//OSI%E6%A8%A1%E5%9E%8B.png&quot; alt=&quot;选择wifi&quot;&gt;&lt;/p&gt;
-&lt;p&gt;
+&lt;p&gt;&lt;img src=&quot;/.com//OSI%E6%A8%A1%E5%9E%8B.png&quot; alt=&quot;OSI模型&quot;&gt;&lt;/p&gt;
+&lt;p&gt;下
       
     
     </summary>
