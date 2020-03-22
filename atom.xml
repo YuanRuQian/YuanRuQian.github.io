@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-02-21T13:11:17.560Z</updated>
+  <updated>2020-03-22T08:55:51.321Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,22 +17,53 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>2020-微信移动客户端-暑期实习-挂经</title>
+    <link href="http://yoursite.com/2020/03/22/2020-%E5%BE%AE%E4%BF%A1%E7%A7%BB%E5%8A%A8%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0-%E6%8C%82%E7%BB%8F/"/>
+    <id>http://yoursite.com/2020/03/22/2020-%E5%BE%AE%E4%BF%A1%E7%A7%BB%E5%8A%A8%E5%AE%A2%E6%88%B7%E7%AB%AF-%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0-%E6%8C%82%E7%BB%8F/</id>
+    <published>2020-03-22T08:53:34.000Z</published>
+    <updated>2020-03-22T08:55:51.321Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>TL:DR：</p><p>面试官人很好，没有为难</p><p>多刷 leetcode</p><p>团体项目和同学合作更加分</p></blockquote><p>上来大概还有两分钟开始</p><p>面试官先自我介绍 他是iOS开发</p><p>简单做了一下自我介绍</p><p>（菜鸡预警⚠️：一年半代码经历 非科班出身 没打过比赛 leetcode只刷过十题easy）</p><hr><p>60 min 手撕三道题</p><p>语言自己任意选 我选的C++ </p><p>第一题 </p><p>O(1) 不存在 插入 / 删除 / 随机返回</p><p>O(1) 明显用 hash_map 我太久没用了 也没有学过 还是自己看资料稍微学了一下 于是卒 随机返回我太紧张把题目看成随机返回一整个数列 以为手撕 Knuth Shuffle 写出来之后一位自己终于有点进展了 结果浪费了十几分钟……  </p><p>第二题 </p><p>后来才知道是 leetcode 列表 两个数相加</p><p>给的例子是有进位的 然后我愣是没看出来意思是 一个列表每个节点连起来是一个数字，最后输出是两个列表表示对数字加起来 然后疑惑这个例子怎么是这个输出……然后就当作普通的对位相加写了…… 于是 卒</p><p>第三题</p><p>O(log(m+n)) 有序数组找中位数 依旧 后来才知道也是 leetcode</p><p>虽然看到log知道是二分但是写着写着卡壳了 于是 卒</p><p>笔试 全部 卒 </p><hr><p>（语音）面试</p><p>面试官小哥人真的特别好 丝毫没有嘲我的意思 很耐心 引导我去重新想一下三题的思路</p><p>然后（尴尬地）开始聊天</p><p>被捞是因为 我GitHub上的一个Vue系统前端他试用了 觉得还可以</p><p>问觉得 Vue 简单吗 </p><p>我（谨慎地）回答上手容易 因为当时开发的时间紧张被 React 学习成本劝退</p><p>问了我简历上的 C++ Java 水平 SQL Git 命令</p><p>还有什么技术栈  我回答 试着上手过 Flutter （iOS）</p><p>问了 Java哪里显示OOP </p><p>问了有没有手撕过 html 和 原生js</p><p>问了python爬虫</p><p>问了代码复用的哲学问题</p><p>具体问了那个被捞的系统开发过程</p><p>问了 iGEM wiki 的事情</p><p>问了英语水平</p><p>其他问题不太记得了</p><p>最后建议：</p><p>可以和同学一起开发项目 尝试着不分前端后端 一起写 一个人写的话 代码具体有什么改进的地方也不知道 可以复用的地方也不知道</p><p>多刷刷算法题（我真的太弱了QAQ 小哥已经很委婉了）</p><hr><p>感想：我太菜了，以后至少每天两题leetcode否则失学事小事业事大……准备找到同学组队肝项目…… </p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;TL:DR：&lt;/p&gt;
+&lt;p&gt;面试官人很好，没有为难&lt;/p&gt;
+&lt;p&gt;多刷 leetcode&lt;/p&gt;
+&lt;p&gt;团体项目和同学合作更加分&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;上来大概还有两分钟开始&lt;/p&gt;
+&lt;p&gt;面试官先自我介绍 他是iOS开发&lt;/p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="interview" scheme="http://yoursite.com/tags/interview/"/>
+    
+  </entry>
+  
+  <entry>
     <title>OSI七层模型：从抓包的角度</title>
     <link href="http://yoursite.com/2020/02/21/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%EF%BC%9A%E4%BB%8E%E6%8A%93%E5%8C%85%E7%9A%84%E8%A7%92%E5%BA%A6/"/>
     <id>http://yoursite.com/2020/02/21/OSI%E4%B8%83%E5%B1%82%E6%A8%A1%E5%9E%8B%EF%BC%9A%E4%BB%8E%E6%8A%93%E5%8C%85%E7%9A%84%E8%A7%92%E5%BA%A6/</id>
     <published>2020-02-21T12:27:31.000Z</published>
-    <updated>2020-02-21T13:11:17.560Z</updated>
+    <updated>2020-02-21T13:26:47.130Z</updated>
     
-    <content type="html"><![CDATA[<p>OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)</p><p>先过一遍(天)书：</p><p><img src="/.com//OSI%E6%A8%A1%E5%9E%8B.png" alt="OSI模型"></p><p>下面开始动手利用 <a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> 抓包</p><hr><p>由于我是用笔记本+Wifi上网，所以监听Wifi</p><p>（其实我不太懂选哪个，但是我看只有 Wifi 和 Loopback 有峰，盲猜……</p><p><img src="/.com//%E9%80%89%E6%8B%A9wifi.png" alt="选择wifi"></p><p>下面访问 <a href="https://cn.bing.com/" target="_blank" rel="noopener">必应</a></p><p><img src="/.com//%E8%AE%BF%E9%97%AE%E5%BF%85%E5%BA%94.png" alt></p><p>中间四条是封包的详细信息</p><p>因为封包的字段其实是指向上一层的，以第一行的 Frame 举例：显然 Frame 帧 是数据链路层的东西，所以第一行的包是来自物理层的。</p><p><img src="/.com//%E7%89%A9%E7%90%86%E5%B1%82.png" alt></p><p>第二行的 Ethernet 以太网</p><p><img src="/.com//%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82.png" alt></p><p>第三行是 网络层 IP协议</p><p><img src="/.com//%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt></p><p>第四行是 传输层 TCP协议</p><p><img src="/.com//%E4%BC%A0%E8%BE%93%E5%B1%82.png" alt></p>]]></content>
+    <content type="html"><![CDATA[<p>OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)</p><p>先过一遍(天)书</p><p><img src="/.com//OSI%E6%A8%A1%E5%9E%8B.png" alt="OSI模型"></p><p>下面开始动手利用 <a href="https://www.wireshark.org/" target="_blank" rel="noopener">Wireshark</a> 抓包</p><hr><p>由于我是用笔记本+Wifi上网，所以监听Wifi</p><p>（其实我不太懂选哪个，但是我看只有 Wifi 和 Loopback 有峰，盲猜……</p><p><img src="/.com//%E9%80%89%E6%8B%A9wifi.png" alt="选择wifi"></p><p>下面访问 <a href="https://cn.bing.com/" target="_blank" rel="noopener">必应</a></p><p><img src="/.com//%E8%AE%BF%E9%97%AE%E5%BF%85%E5%BA%94.png" alt></p><p>中间四条是封包的详细信息</p><p>因为封包的字段其实是指向上一层的，以第一行的 Frame 举例：显然 Frame 帧 是数据链路层的东西，所以第一行的包是来自物理层的。</p><p><img src="/.com//%E7%89%A9%E7%90%86%E5%B1%82.png" alt></p><p>第二行的 Ethernet 以太网</p><p><img src="/.com//%E6%95%B0%E6%8D%AE%E9%93%BE%E8%B7%AF%E5%B1%82.png" alt></p><p>第三行是 网络层 IP协议</p><p><img src="/.com//%E7%BD%91%E7%BB%9C%E5%B1%82.png" alt></p><p>第四行是 传输层 TCP协议</p><p><img src="/.com//%E4%BC%A0%E8%BE%93%E5%B1%82.png" alt></p>]]></content>
     
     <summary type="html">
     
       
       
         &lt;p&gt;OSI好复杂，看书和视频对于学渣都太不友好了，还是亲自上手抓包才能理解 (..•˘_˘•..)&lt;/p&gt;
-&lt;p&gt;先过一遍(天)书：&lt;/p&gt;
+&lt;p&gt;先过一遍(天)书&lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/.com//OSI%E6%A8%A1%E5%9E%8B.png&quot; alt=&quot;OSI模型&quot;&gt;&lt;/p&gt;
-&lt;p&gt;下
+&lt;p&gt;下面
       
     
     </summary>
