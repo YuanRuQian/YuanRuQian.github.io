@@ -17,10 +17,10 @@
 <p>难道要 N分 都循环一遍吗？</p>
 <p><del>这太复杂了我也写不出来</del></p>
 <p>那就……找规律？找 worst case 就可以了</p>
-<p>假设第一次从 $x$ 层扔下去 </p>
-<p>没碎 于是继续往楼上找 此时已经扔了1次 碎了最坏需要测试 $x$ 次</p>
-<p>那么第二次 应该找 $x+(x-1)$ 层扔下去</p>
-<p>因为 如果第二次碎了 那么最坏的情况需要测试 $x+(x-1)-x+1$ 一共 $x$ 次 不应该比 $x$ 次更多了</p>
+<p>假设第一次从 x​ 层扔下去 </p>
+<p>没碎 于是继续往楼上找 此时已经扔了1次 碎了最坏需要测试 x​ 次</p>
+<p>那么第二次 应该找 x+(x-1)​ 层扔下去</p>
+<p>因为 如果第二次碎了 那么最坏的情况需要测试 x+(x-1)-x+1​ 一共 ​x​ 次 不应该比 ​x​ 次更多了</p>
 <p>往后也是一样</p>
 <p>所以最坏的情况是 100 层 全部测试一遍</p>
 <p>最后一次最理想的情况应该只有一层楼可以测</p>
@@ -37,8 +37,6 @@
 
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="number">14</span> <span class="comment">// 第一次</span></span><br><span class="line"><span class="number">27</span> </span><br><span class="line"><span class="number">39</span></span><br><span class="line"><span class="number">50</span></span><br><span class="line"><span class="number">60</span></span><br><span class="line"><span class="number">69</span></span><br><span class="line"><span class="number">77</span></span><br><span class="line"><span class="number">84</span></span><br><span class="line"><span class="number">90</span></span><br><span class="line"><span class="number">95</span> <span class="comment">// </span></span><br><span class="line"><span class="number">99</span> <span class="comment">// 最后一次</span></span><br></pre></td></tr></table></figure>
 
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Therefore, we start trying from 14&#39;th floor. If Egg breaks</span><br><span class="line">we one by one try remaining 13 floors.  If egg doesn&#39;t break</span><br><span class="line">we go to 27th floor.</span><br><span class="line">If egg breaks on 27&#39;th floor, we try floors form 15 to 26.</span><br><span class="line">If egg doesn&#39;t break on 27&#39;th floor, we go to 39&#39;th floor.</span><br><span class="line"></span><br><span class="line">An so on...</span><br></pre></td></tr></table></figure>
-
 <p>所以说，从14层开始扔，蛋碎了 ➡️ 剩下13层都试一遍 ➡️ 一共 14次</p>
 <p>蛋没碎 ➡️ 从 27 层再次开始扔 ➡️ 蛋碎了 ➡️ 剩下 27-14+1 一共 14次</p>
 <p>……</p>
@@ -51,9 +49,13 @@
 <p>思路：1-k 每层楼都扔一次，递归计算一下 worst case，记下 worst case 最小的</p>
 <p><del>不能再抖机灵了，因为我想不出来怎么找规律了</del></p>
 <p>1) If the egg breaks after dropping from xth floor, then we only need to check for floors lower than x with remaining eggs; so the problem  reduces to x-1 floors and n-1 eggs<br> 2) If the egg doesn’t break after dropping from the xth floor, then we  only need to check for floors higher than x; so the problem reduces to  k-x floors and n eggs.</p>
-<p>如果从 x 层扔下去，要么 1⃣️ 碎 2⃣️ 不碎</p>
-<p>1⃣️ 鸡蛋碎了：问题变成 x-1 楼的建筑物 和 n-1 个 蛋</p>
-<p>2⃣️ 没有碎：问题变成 楼上的 k-x 层楼 和 n 个蛋</p>
+<p>如果从 x 层扔下去，要么  碎 要么 不碎</p>
+<ul>
+<li><p>鸡蛋碎了：问题变成 x-1 楼的建筑物 和 n-1 个 蛋</p>
+</li>
+<li><p>没有碎：问题变成 楼上的 k-x 层楼 和 n 个蛋</p>
+</li>
+</ul>
 <p>同时要保证 worst case 的尝试数目最小，所以要考虑上面两种情况的最大值那个更小 ：</p>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">eggDrop(n, k) = <span class="number">1</span> + min&#123;max(eggDrop(n - <span class="number">1</span>, x - <span class="number">1</span>), eggDrop(n, k - x))</span><br></pre></td></tr></table></figure>
 
