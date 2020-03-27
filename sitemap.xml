@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/tags/index.html</loc>
+    
+    <lastmod>2020-03-27T15:14:33.017Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/03/27/Puzzle-Set-35-2-Eggs-and-100-Floors/</loc>
     
     <lastmod>2020-03-27T11:22:21.089Z</lastmod>
@@ -47,13 +54,6 @@
     <loc>http://yoursite.com/2020/03/23/LeetCode-101-Symmetric-Tree/</loc>
     
     <lastmod>2020-03-25T03:26:39.780Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/index.html</loc>
-    
-    <lastmod>2020-03-25T03:09:59.462Z</lastmod>
     
   </url>
   
