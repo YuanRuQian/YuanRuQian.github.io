@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-01T05:02:22.811Z</updated>
+  <updated>2020-04-02T09:12:47.267Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,48 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 5. Longest Palindromic Substring</title>
+    <link href="http://yoursite.com/2020/04/02/LeetCode-5-Longest-Palindromic-Substring/"/>
+    <id>http://yoursite.com/2020/04/02/LeetCode-5-Longest-Palindromic-Substring/</id>
+    <published>2020-04-02T07:31:50.000Z</published>
+    <updated>2020-04-02T09:12:47.267Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a string <strong>s</strong>, find the longest palindromic substring in <strong>s</strong>. You may assume that the maximum length of <strong>s</strong> is 1000.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;babad&quot;</span><br><span class="line">Output: &quot;bab&quot;</span><br><span class="line">Note: &quot;aba&quot; is also a valid answer.</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;cbbd&quot;</span><br><span class="line">Output: &quot;bb&quot;</span><br></pre></td></tr></table></figure></blockquote><h4 id="js-substring"><a class="markdownIt-Anchor" href="#js-substring"></a> JS <code>substring()</code></h4><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">str.substring(indexStart[, indexEnd])</span><br></pre></td></tr></table></figure><h4 id="parameters"><a class="markdownIt-Anchor" href="#parameters"></a> Parameters</h4><ul><li><p><code>indexStart</code></p><p>The index of the first character to include in the returned substring.</p></li><li><p><code>indexEnd</code> Optional</p><p>The index of the first character to exclude from the returned substring.</p></li></ul><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>(s.length&lt;<span class="number">2</span>) <span class="keyword">return</span> s;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">let</span> maxStr = <span class="string">""</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;<span class="number">2</span>;j++)&#123;</span><br><span class="line">            <span class="comment">// two situations: ABA &amp; AA so is str[i]&amp;str[i] or str[i]&amp;str[i+1]</span></span><br><span class="line">            <span class="keyword">let</span> left = i;</span><br><span class="line">            <span class="keyword">let</span> right = i+j;</span><br><span class="line">            <span class="keyword">while</span>(s[left] &amp;&amp; s[left]===s[right])&#123;</span><br><span class="line">                left--;</span><br><span class="line">                right++;</span><br><span class="line">            &#125;</span><br><span class="line">          <span class="comment">// when it stops the variables are : s[real_left-1]s[real_right+1]</span></span><br><span class="line">          <span class="comment">// so the length is real_right-real_left+1=(real_right+1)-(real_left-1)-2+1=right-left-1</span></span><br><span class="line">            <span class="keyword">if</span>((right-left<span class="number">-1</span>)&gt;maxStr.length) &#123;</span><br><span class="line">                maxStr = s.substring(left+<span class="number">1</span>,right);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">return</span> maxStr;</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a string &lt;strong&gt;s&lt;/strong&gt;, find the longest palindromic substring in &lt;strong&gt;s&lt;/strong&gt;. You may assume that the max
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>About Cylic Redundancy Check</title>
+    <link href="http://yoursite.com/2020/04/02/About-Cylic-Redundancy-Check/"/>
+    <id>http://yoursite.com/2020/04/02/About-Cylic-Redundancy-Check/</id>
+    <published>2020-04-02T07:20:07.000Z</published>
+    <updated>2020-04-02T07:21:00.400Z</updated>
+    
+    <summary type="html">
+    
+    </summary>
+    
+    
+    
+      <category term="Network" scheme="http://yoursite.com/tags/Network/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 105. Construct Binary Tree from Preorder and Inorder Traversal</title>
