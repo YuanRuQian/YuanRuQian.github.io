@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-04T06:20:25.145Z</updated>
+  <updated>2020-04-04T06:26:15.197Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="http://yoursite.com/2020/04/04/2020-4-4-How-Chinese-websites-become-balck-and-white/"/>
     <id>http://yoursite.com/2020/04/04/2020-4-4-How-Chinese-websites-become-balck-and-white/</id>
     <published>2020-04-04T03:11:31.000Z</published>
-    <updated>2020-04-04T06:20:25.145Z</updated>
+    <updated>2020-04-04T06:26:15.197Z</updated>
     
-    <content type="html"><![CDATA[<p>As a heavy Douban user, I checked Douban web ver first.</p><p><img src="/images/douban-before-4-4.png" /></p><p>I was doing an all-nighter and boom , the world turned colorless.</p><p><img src="/images/douban-after-4-4.png" /></p><p>One of my friends told me that use <code>document.body.classList.remove('gray-mode')</code> can reignite the original view. I tried and it worked !</p><p>So I opened my Firefox dev tools and looked into the code.</p><p><img src="/images/douban-before-code-4-4.png" /></p>]]></content>
+    <content type="html"><![CDATA[<blockquote><p>If you don't see any images pls wait a sec cuz I use root-relative Link to store images. It might take a while to load these images.</p></blockquote><p>As a heavy Douban user, I checked Douban web ver first.</p><p><img src="/images/douban-before-4-4.png" /></p><p>I was doing an all-nighter and boom , the world turned colorless.</p><p><img src="/images/douban-after-4-4.png" /></p><p>One of my friends told me that use <code>document.body.classList.remove('gray-mode')</code> can reignite the original view. I tried and it worked !</p><p>So I opened my Firefox dev tools and looked into the code.</p><p><img src="../images/douban-before-code-4-4.png" /></p><p>It quite clear that the <code>gray-mode</code> class in the <code>body</code> add a gray filter.</p>]]></content>
     
     <summary type="html">
     
       
       
-        &lt;p&gt;As a heavy Douban user, I checked Douban web ver first.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/images/douban-before-4-4.png&quot; /&gt;&lt;/p&gt;
-&lt;p&gt;I was doing an all-nigh
+        &lt;blockquote&gt;
+&lt;p&gt;If you don&#39;t see any images pls wait a sec cuz I use root-relative Link to store images. It might take a while to load these
       
     
     </summary>
