@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/07/LeetCode-114-Flatten-Binary-Tree-to-Linked-List/</loc>
+    
+    <lastmod>2020-04-07T10:47:15.070Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/06/LeetCode-78-Subsets/</loc>
     
     <lastmod>2020-04-06T10:02:29.339Z</lastmod>
