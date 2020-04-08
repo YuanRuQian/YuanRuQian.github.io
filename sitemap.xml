@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/08/LeetCode-75-Sort-Colors/</loc>
+    
+    <lastmod>2020-04-08T04:49:50.168Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/07/LeetCode-114-Flatten-Binary-Tree-to-Linked-List/</loc>
     
     <lastmod>2020-04-07T10:47:15.070Z</lastmod>
