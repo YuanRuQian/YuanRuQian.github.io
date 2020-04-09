@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-08T04:49:50.168Z</updated>
+  <updated>2020-04-09T07:59:02.407Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 739. Daily Temperatures</title>
+    <link href="http://yoursite.com/2020/04/09/LeetCode-739-Daily-Temperatures/"/>
+    <id>http://yoursite.com/2020/04/09/LeetCode-739-Daily-Temperatures/</id>
+    <published>2020-04-09T06:36:41.000Z</published>
+    <updated>2020-04-09T07:59:02.407Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a list of daily temperatures <code>T</code>, return a list such that, for each day in the input, tells you how many days you would have to wait until a warmer temperature. If there is no future day for which this is possible, put <code>0</code> instead.</p><p>For example, given the list of temperatures <code>T = [73, 74, 75, 71, 69, 72, 76, 73]</code>, your output should be <code>[1, 1, 4, 2, 1, 1, 0, 0]</code>.</p><p><strong>Note:</strong> The length of <code>temperatures</code> will be in the range <code>[1, 30000]</code>. Each temperature will be an integer in the range <code>[30, 100]</code>.</p></blockquote><p>Use stack to store the temporary ready-to-compare elements</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">T</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> dailyTemperatures = <span class="function"><span class="keyword">function</span>(<span class="params">T</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(T===<span class="literal">null</span>) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">let</span> temp = []; <span class="comment">// stack</span></span><br><span class="line">    <span class="keyword">let</span> res = <span class="built_in">Array</span>(T.length).fill(<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;T.length;i++) &#123;</span><br><span class="line">        <span class="keyword">while</span> (temp.length&gt;<span class="number">0</span> &amp;&amp; T[i]&gt;T[temp[temp.length<span class="number">-1</span>]])  &#123;</span><br><span class="line">        </span><br><span class="line">            <span class="comment">// if meet the right element pop out the one in the stack , record the index and move on</span></span><br><span class="line">            <span class="keyword">let</span> index = temp.pop();</span><br><span class="line">            res[index] = i - index;</span><br><span class="line">        &#125;</span><br><span class="line">        temp.push(i);</span><br><span class="line">       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a list of daily temperatures &lt;code&gt;T&lt;/code&gt;, return a list such that, for each day in the input, tells you how many da
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 75. Sort Colors</title>
@@ -508,31 +533,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given a binary tree, check whether it is a mirror of itself (ie, symmetric around its center).&lt;/p&gt;
 &lt;p&gt;For example, this bina
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 20. Valid Parentheses</title>
-    <link href="http://yoursite.com/2020/03/23/LeetCode-20-Valid-Parentheses/"/>
-    <id>http://yoursite.com/2020/03/23/LeetCode-20-Valid-Parentheses/</id>
-    <published>2020-03-23T03:03:31.000Z</published>
-    <updated>2020-03-25T03:26:39.785Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a string containing just the characters <code>&#39;(&#39;</code>, <code>&#39;)&#39;</code>, <code>&#39;{&#39;</code>, <code>&#39;}&#39;</code>, <code>&#39;[&#39;</code> and <code>&#39;]&#39;</code>, determine if the input string is valid.</p><p>An input string is valid if:</p><ol><li>Open brackets must be closed by the same type of brackets.</li><li>Open brackets must be closed in the correct order.</li></ol><p>Note that an empty string is also considered valid.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;()[]&#123;&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;(]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><p><strong>Example 4:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;([)]&quot;</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><p><strong>Example 5:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;&#123;[]&#125;&quot;</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure></blockquote><p>思路：经典的栈操作，显然左符号先入栈，如果有配对的就入栈，没有的就是右符号，看栈顶的是否和和它配对，不配对显然整个字符串都对</p><p>解：</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isValid = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(s.length==<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(s.length%<span class="number">2</span>==<span class="number">1</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> dict = &#123;</span><br><span class="line">        <span class="string">'&#123;'</span>:<span class="string">'&#125;'</span>,</span><br><span class="line">        <span class="string">'['</span>:<span class="string">']'</span>,</span><br><span class="line">        <span class="string">'('</span>:<span class="string">')'</span></span><br><span class="line">    &#125;;</span><br><span class="line">  <span class="comment">// 利用 hashmap O(1)查找 节约开支</span></span><br><span class="line">    </span><br><span class="line">    <span class="keyword">const</span> stack = [];</span><br><span class="line">    </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">if</span>(dict[s[i]])</span><br><span class="line">                &#123;</span><br><span class="line">                    stack.push(s[i]);</span><br><span class="line">                &#125;</span><br><span class="line">            <span class="keyword">else</span> <span class="keyword">if</span>(dict[stack.pop()]!==s[i])</span><br><span class="line">                &#123;</span><br><span class="line">                    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">                &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    <span class="keyword">return</span> !stack.length;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a string containing just the characters &lt;code&gt;&amp;#39;(&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;)&amp;#39;&lt;/code&gt;, &lt;code&gt;&amp;#39;{&amp;#39;&lt;/code&gt;, 
       
     
     </summary>

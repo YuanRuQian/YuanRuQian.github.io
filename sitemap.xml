@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/09/LeetCode-739-Daily-Temperatures/</loc>
+    
+    <lastmod>2020-04-09T07:59:02.407Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/08/LeetCode-75-Sort-Colors/</loc>
     
     <lastmod>2020-04-08T04:49:50.168Z</lastmod>
