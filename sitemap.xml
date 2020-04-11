@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/11/LeetCode-200-Number-of-Islands/</loc>
+    
+    <lastmod>2020-04-11T02:54:58.065Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/10/LeetCode-102-Binary-Tree-Level-Order-Traversal/</loc>
     
     <lastmod>2020-04-10T08:09:05.783Z</lastmod>
