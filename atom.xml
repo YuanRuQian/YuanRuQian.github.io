@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-04-14T06:43:44.728Z</updated>
+  <updated>2020-04-14T15:41:10.657Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 56. Merge Intervals</title>
+    <link href="http://yoursite.com/2020/04/14/LeetCode-56-Merge-Intervals/"/>
+    <id>http://yoursite.com/2020/04/14/LeetCode-56-Merge-Intervals/</id>
+    <published>2020-04-14T10:29:54.000Z</published>
+    <updated>2020-04-14T15:41:10.657Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a collection of intervals, merge all overlapping intervals.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,3],[2,6],[8,10],[15,18]]</span><br><span class="line">Output: [[1,6],[8,10],[15,18]]</span><br><span class="line">Explanation: Since intervals [1,3] and [2,6] overlaps, merge them into [1,6].</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,4],[4,5]]</span><br><span class="line">Output: [[1,5]]</span><br><span class="line">Explanation: Intervals [1,4] and [4,5] are considered overlapping.</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">intervals</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> merge = <span class="function"><span class="keyword">function</span>(<span class="params">intervals</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(intervals.length&lt;<span class="number">2</span>) <span class="keyword">return</span> intervals;</span><br><span class="line">    intervals.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>(a[<span class="number">0</span>]-b[<span class="number">0</span>]));</span><br><span class="line">    <span class="comment">// first ascending sort</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;intervals.length<span class="number">-1</span>;i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> pre = intervals[i];</span><br><span class="line">        <span class="keyword">let</span> lat = intervals[i+<span class="number">1</span>];</span><br><span class="line">        <span class="keyword">if</span>(pre[<span class="number">1</span>]&gt;=lat[<span class="number">0</span>]) &#123;</span><br><span class="line">            intervals[i+<span class="number">1</span>]=[<span class="built_in">Math</span>.min(pre[<span class="number">0</span>],lat[<span class="number">0</span>]),<span class="built_in">Math</span>.max(pre[<span class="number">1</span>],lat[<span class="number">1</span>])];</span><br><span class="line">            intervals.splice(i,<span class="number">1</span>);</span><br><span class="line">            i--;</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> intervals;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a collection of intervals, merge all overlapping intervals.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure class=&quot;high
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>R visualization : ordered dot chart</title>
@@ -500,31 +527,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Implement &lt;strong&gt;next permutation&lt;/strong&gt;, which rearranges numbers into the lexicographically next greater permutation of
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 279. Perfect Squares</title>
-    <link href="http://yoursite.com/2020/03/28/LeetCode-279-Perfect-Squares/"/>
-    <id>http://yoursite.com/2020/03/28/LeetCode-279-Perfect-Squares/</id>
-    <published>2020-03-28T03:34:01.000Z</published>
-    <updated>2020-03-28T05:45:33.983Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a positive integer <em>n</em>, find the least number of perfect square numbers (for example, <code>1, 4, 9, 16, ...</code>) which sum to <em>n</em>.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 12</span><br><span class="line">Output: 3 </span><br><span class="line">Explanation: 12 &#x3D; 4 + 4 + 4.</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 13</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: 13 &#x3D; 4 + 9.</span><br></pre></td></tr></table></figure></blockquote><p>思路：</p><p><s>又是DP…… 哎……</s></p><p>一个数组 <code>countPS[n]</code> 记录一下  1-n 每个数字可以拆成 完美平方的 最小值的数目</p><p>递归是 <code>countPS[i]=min(countPS[i],countPS[i-j*j]+1)</code></p><p>开始手撕</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> numSquares = <span class="function"><span class="keyword">function</span>(<span class="params">n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(n&lt;=<span class="number">1</span>) <span class="keyword">return</span> n;</span><br><span class="line">    <span class="keyword">const</span> countPS = <span class="built_in">Array</span>(n+<span class="number">1</span>).fill(<span class="literal">Infinity</span>);</span><br><span class="line">    countPS[<span class="number">0</span>]=<span class="number">0</span>;</span><br><span class="line">    countPS[<span class="number">1</span>]=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=n;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;i-j*j&gt;=<span class="number">0</span>;j++) &#123;</span><br><span class="line">            countPS[i]=<span class="built_in">Math</span>.min(countPS[i],countPS[i-j*j]+<span class="number">1</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> countPS[n];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>就，比较平凡的想法</p><p>唯一的收获是学习了 JS 数组自动填充 <code>Array.prototype.fill()</code></p><p>评论区惊现数学学霸降维打击：<a href="https://leetcode.com/problems/perfect-squares/discuss/71488/Summary-of-4-different-solutions-(BFS-DP-static-DP-and-mathematics)" target="_blank" rel="noopener">https://leetcode.com/problems/perfect-squares/discuss/71488/Summary-of-4-different-solutions-(BFS-DP-static-DP-and-mathematics)</a></p><p><s>拉格朗日四平方和定理，维基这里有点不讲人话，我更推荐阅读：<a href="https://www.changhai.org/articles/science/mathematics/four_square_theorem.php" target="_blank" rel="noopener">https://www.changhai.org/articles/science/mathematics/four_square_theorem.php</a></s></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a positive integer &lt;em&gt;n&lt;/em&gt;, find the least number of perfect square numbers (for example, &lt;code&gt;1, 4, 9, 16, ...&lt;/c
       
     
     </summary>
