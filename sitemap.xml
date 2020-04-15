@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/15/LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/</loc>
+    
+    <lastmod>2020-04-15T07:51:41.399Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/14/LeetCode-56-Merge-Intervals/</loc>
     
     <lastmod>2020-04-14T15:41:10.657Z</lastmod>
