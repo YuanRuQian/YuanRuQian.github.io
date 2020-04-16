@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/16/LeetCode-98-Validate-Binary-Search-Tree/</loc>
+    
+    <lastmod>2020-04-16T04:37:43.747Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/15/LeetCode-34-Find-First-and-Last-Position-of-Element-in-Sorted-Array/</loc>
     
     <lastmod>2020-04-15T07:51:41.399Z</lastmod>
