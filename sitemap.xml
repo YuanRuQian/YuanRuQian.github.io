@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/17/LeetCode-136-Single-Number/</loc>
+    
+    <lastmod>2020-04-17T02:34:21.186Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/16/LeetCode-98-Validate-Binary-Search-Tree/</loc>
     
     <lastmod>2020-04-16T04:37:43.747Z</lastmod>
