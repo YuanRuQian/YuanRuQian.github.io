@@ -4,13 +4,19 @@
 <p>To represent a cycle in the given linked list, we use an integer <code>pos</code> which represents the position (0-indexed) in the linked list where tail connects to. If <code>pos</code> is <code>-1</code>, then there is no cycle in the linked list.</p>
 <p><strong>Example 1:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [3,2,0,-4], pos &#x3D; 1</span><br><span class="line">Output: true</span><br><span class="line">Explanation: There is a cycle in the linked list, where tail connects to the second node.</span><br></pre></td></tr></table></figure>
-<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img" /></p>
+<figure>
+<img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist.png" alt="img" /><figcaption>img</figcaption>
+</figure>
 <p><strong>Example 2:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [1,2], pos &#x3D; 0</span><br><span class="line">Output: true</span><br><span class="line">Explanation: There is a cycle in the linked list, where tail connects to the first node.</span><br></pre></td></tr></table></figure>
-<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png" alt="img" /></p>
+<figure>
+<img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test2.png" alt="img" /><figcaption>img</figcaption>
+</figure>
 <p><strong>Example 3:</strong></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: head &#x3D; [1], pos &#x3D; -1</span><br><span class="line">Output: false</span><br><span class="line">Explanation: There is no cycle in the linked list.</span><br></pre></td></tr></table></figure>
-<p><img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png" alt="img" /></p>
+<figure>
+<img src="https://assets.leetcode.com/uploads/2018/12/07/circularlinkedlist_test3.png" alt="img" /><figcaption>img</figcaption>
+</figure>
 <p><strong>Follow up:</strong></p>
 <p>Can you solve it using <em>O(1)</em> (i.e. constant) memory?</p>
 </blockquote>
