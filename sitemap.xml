@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/25/LeetCode-55-Jump-Game/</loc>
+    
+    <lastmod>2020-04-25T15:57:40.253Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/25/LeetCode-141-Linked-List-Cycle/</loc>
     
     <lastmod>2020-04-25T07:37:05.852Z</lastmod>
