@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/26/LeetCode-39-Combination-Sum/</loc>
+    
+    <lastmod>2020-04-26T06:36:56.865Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/25/LeetCode-55-Jump-Game/</loc>
     
     <lastmod>2020-04-25T15:57:40.253Z</lastmod>
