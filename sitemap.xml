@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/03/30/2020%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%8F%8D%E6%80%9D/</loc>
+    
+    <lastmod>2020-04-28T05:55:11.238Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/04/28/R-visualization-mosaic-plot/</loc>
+    
+    <lastmod>2020-04-28T03:45:53.723Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/27/LeetCode-581-Shortest-Unsorted-Continuous-Subarray/</loc>
     
-    <lastmod>2020-04-27T16:01:51.660Z</lastmod>
+    <lastmod>2020-04-27T16:04:21.698Z</lastmod>
     
   </url>
   
@@ -12,13 +26,6 @@
     <loc>http://yoursite.com/2020/04/27/LeetCode-160-Intersection-of-Two-Linked-Lists/</loc>
     
     <lastmod>2020-04-27T15:39:32.102Z</lastmod>
-    
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/2020/03/30/2020%E6%9A%91%E6%9C%9F%E5%AE%9E%E4%B9%A0%E8%AE%B0%E5%BD%95-%E5%8F%8D%E6%80%9D/</loc>
-    
-    <lastmod>2020-04-26T15:21:47.888Z</lastmod>
     
   </url>
   
