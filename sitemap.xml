@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/29/LeetCode-300-Longest-Increasing-Subsequence/</loc>
+    
+    <lastmod>2020-04-29T07:01:46.460Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/28/LeetCode-46-Permutations/</loc>
     
     <lastmod>2020-04-28T12:10:05.244Z</lastmod>
