@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/04/30/LeetCode-347-Top-K-Frequent-Elements/</loc>
+    
+    <lastmod>2020-04-30T05:34:34.919Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/04/29/LeetCode-300-Longest-Increasing-Subsequence/</loc>
     
     <lastmod>2020-04-29T07:54:58.167Z</lastmod>
