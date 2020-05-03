@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/03/LeetCode-64-Minimum-Path-Sum/</loc>
+    
+    <lastmod>2020-05-03T08:52:48.742Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/03/LeetCode-17-Letter-Combinations-of-a-Phone-Number/</loc>
     
     <lastmod>2020-05-03T05:05:17.719Z</lastmod>
