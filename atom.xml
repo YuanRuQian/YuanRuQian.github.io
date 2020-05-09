@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-05-09T03:38:52.784Z</updated>
+  <updated>2020-05-09T15:14:04.158Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Mother&#39;s day 2020</title>
+    <link href="http://yoursite.com/2020/05/09/Mother-s-day-2020/"/>
+    <id>http://yoursite.com/2020/05/09/Mother-s-day-2020/</id>
+    <published>2020-05-09T15:12:22.000Z</published>
+    <updated>2020-05-09T15:14:04.158Z</updated>
+    
+    <content type="html"><![CDATA[<iframe height="265" style="width: 100%;" scrolling="no" title="Happy Mothers Day From Lydia" src="https://codepen.io/yuanruqian/embed/pojVJBO?height=265&theme-id=light&default-tab=css,result" frameborder="no" allowtransparency="true" allowfullscreen="true">  See the Pen <a href='https://codepen.io/yuanruqian/pen/pojVJBO' target="_blank" rel="noopener">Happy Mothers Day From Lydia</a> by Lydia_Yuan  (<a href='https://codepen.io/yuanruqian' target="_blank" rel="noopener">@yuanruqian</a>) on <a href='https://codepen.io' target="_blank" rel="noopener">CodePen</a>.</iframe>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;iframe height=&quot;265&quot; style=&quot;width: 100%;&quot; scrolling=&quot;no&quot; title=&quot;Happy Mothers Day From Lydia&quot; src=&quot;https://codepen.io/yuanruqian/embed/pojVJ
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Life" scheme="http://yoursite.com/tags/Life/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 63. Unique Paths II</title>
@@ -494,32 +518,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Given a &lt;strong&gt;set&lt;/strong&gt; of candidate numbers (&lt;code&gt;candidates&lt;/code&gt;) &lt;strong&gt;(without duplicates)&lt;/strong&gt; and a targ
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 55. Jump Game</title>
-    <link href="http://yoursite.com/2020/04/25/LeetCode-55-Jump-Game/"/>
-    <id>http://yoursite.com/2020/04/25/LeetCode-55-Jump-Game/</id>
-    <published>2020-04-25T11:10:27.000Z</published>
-    <updated>2020-04-25T15:57:40.253Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Determine if you are able to reach the last index.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: true</span><br><span class="line">Explanation: Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,2,1,0,4]</span><br><span class="line">Output: false</span><br><span class="line">Explanation: You will always arrive at index 3 no matter what. Its maximum</span><br><span class="line">             jump length is 0, which makes it impossible to reach the last index.</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// greedy method</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> canJump = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> max = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.length;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i&gt;max) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(max&gt;=nums.length<span class="number">-1</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        max = <span class="built_in">Math</span>.max(nums[i]+i,max);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"> <span class="comment">// DP solution</span></span><br><span class="line"><span class="keyword">var</span> canJump = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!nums || nums.length===<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">let</span> record = <span class="built_in">Array</span>(nums.length).fill(<span class="literal">false</span>);</span><br><span class="line">    <span class="comment">// record array to indicate whether can jump to nums[i]</span></span><br><span class="line">    record[<span class="number">0</span>]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;nums.length;i++) &#123;</span><br><span class="line">        record[i]=<span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;i;j++) &#123;</span><br><span class="line">            <span class="keyword">if</span> (record[j] &amp;&amp; (j + nums[j] &gt;= i)) &#123;</span><br><span class="line">                record[i] = <span class="literal">true</span></span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">     <span class="keyword">return</span> record[record.length<span class="number">-1</span>];</span><br><span class="line">   </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given an array of non-negative integers, you are initially positioned at the first index of the array.&lt;/p&gt;
-&lt;p&gt;Each element i
       
     
     </summary>

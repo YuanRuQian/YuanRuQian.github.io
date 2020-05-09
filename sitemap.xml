@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/09/Mother-s-day-2020/</loc>
+    
+    <lastmod>2020-05-09T15:14:04.158Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/09/LeetCode-63-Unique-Paths-II/</loc>
     
     <lastmod>2020-05-09T03:38:52.784Z</lastmod>
