@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/13/LeetCode-287-Find-the-Duplicate-Number/</loc>
+    
+    <lastmod>2020-05-13T06:01:30.071Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/12/LeetCode-148-Sort-List/</loc>
     
     <lastmod>2020-05-12T03:41:31.998Z</lastmod>
