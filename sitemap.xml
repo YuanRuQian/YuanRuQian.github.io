@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/13/Java-why-strings-cannot-be-altered/</loc>
+    
+    <lastmod>2020-05-13T10:13:09.048Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/13/LeetCode-16-3Sum-Closest/</loc>
+    
+    <lastmod>2020-05-13T08:33:39.286Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/13/LeetCode-287-Find-the-Duplicate-Number/</loc>
     
     <lastmod>2020-05-13T06:01:30.071Z</lastmod>
