@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/21/LeetCode-57-Insert-Interval/</loc>
+    
+    <lastmod>2020-05-21T06:01:31.286Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/05/21/LeetCode-309-Best-Time-to-Buy-and-Sell-Stock-with-Cooldown/</loc>
+    
+    <lastmod>2020-05-21T04:30:40.916Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/20/LeetCode-221-Maximal-Square/</loc>
     
     <lastmod>2020-05-20T05:22:16.489Z</lastmod>
