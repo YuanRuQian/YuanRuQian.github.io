@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/05/24/LeetCode-85-Maximal-Rectangle/</loc>
+    
+    <lastmod>2020-05-24T08:33:41.474Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/05/23/LeetCode-494-Target-Sum/</loc>
     
     <lastmod>2020-05-23T08:44:19.024Z</lastmod>
