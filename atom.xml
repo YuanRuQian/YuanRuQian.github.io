@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-01T10:15:17.221Z</updated>
+  <updated>2020-06-01T17:47:09.772Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 77. Combinations</title>
+    <link href="http://yoursite.com/2020/06/02/LeetCode-77-Combinations/"/>
+    <id>http://yoursite.com/2020/06/02/LeetCode-77-Combinations/</id>
+    <published>2020-06-01T17:42:12.000Z</published>
+    <updated>2020-06-01T17:47:09.772Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given two integers <em>n</em> and <em>k</em>, return all possible combinations of <em>k</em> numbers out of 1 … <em>n</em>.</p><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 4, k &#x3D; 2</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">k</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> combine = <span class="function"><span class="keyword">function</span>(<span class="params">n, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> p = <span class="built_in">Array</span>(k).fill(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span>(i&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">        p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i]&gt;n) i--;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i===k<span class="number">-1</span>) res.push(p.slice(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            p[i] = p[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given two integers &lt;em&gt;n&lt;/em&gt; and &lt;em&gt;k&lt;/em&gt;, return all possible combinations of &lt;em&gt;k&lt;/em&gt; numbers out of 1 … &lt;em&gt;n&lt;/em&gt;.&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 36. Valid Sudoku</title>
@@ -488,32 +513,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Given an integer array &lt;code&gt;nums&lt;/code&gt;, find the contiguous subarray within an array (containing at least one number) whic
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 124. Binary Tree Maximum Path Sum</title>
-    <link href="http://yoursite.com/2020/05/18/LeetCode-124-Binary-Tree-Maximum-Path-Sum/"/>
-    <id>http://yoursite.com/2020/05/18/LeetCode-124-Binary-Tree-Maximum-Path-Sum/</id>
-    <published>2020-05-18T04:41:41.000Z</published>
-    <updated>2020-05-18T04:43:32.131Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a <strong>non-empty</strong> binary tree, find the maximum path sum.</p><p>For this problem, a path is defined as any sequence of nodes from some starting node to any node in the tree along the parent-child connections. The path must contain <strong>at least one node</strong> and does not need to go through the root.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,3]</span><br><span class="line"></span><br><span class="line">       1</span><br><span class="line">      &#x2F; \</span><br><span class="line">     2   3</span><br><span class="line"></span><br><span class="line">Output: 6</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input: [-10,9,20,null,null,15,7]</span><br><span class="line"></span><br><span class="line">   -10</span><br><span class="line">   &#x2F; \</span><br><span class="line">  9  20</span><br><span class="line">    &#x2F;  \</span><br><span class="line">   15   7</span><br><span class="line"></span><br><span class="line">Output: 42</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> maxPathSum = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root) <span class="keyword">return</span>;</span><br><span class="line">    <span class="keyword">let</span> maxVal = root.val;</span><br><span class="line">    <span class="keyword">let</span> helper = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="built_in">Math</span>.max(helper(root.left),<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">let</span> right =  <span class="built_in">Math</span>.max(helper(root.right),<span class="number">0</span>);</span><br><span class="line">    maxVal =  <span class="built_in">Math</span>.max(maxVal,left+right+root.val);</span><br><span class="line">      <span class="comment">// either you keep going from the current node or not</span></span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(left,right)+root.val;</span><br><span class="line">&#125;</span><br><span class="line">    helper(root);</span><br><span class="line">    <span class="keyword">return</span> maxVal;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; binary tree, find the maximum path sum.&lt;/p&gt;
-&lt;p&gt;For this problem, a path is defined as any
       
     
     </summary>
