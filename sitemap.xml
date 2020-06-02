@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/03/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/</loc>
+    
+    <lastmod>2020-06-02T19:30:23.673Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/06/03/LeetCode-116-Populating-Next-Right-Pointers-in-Each-Node/</loc>
+    
+    <lastmod>2020-06-02T19:12:53.358Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/02/LeetCode-77-Combinations/</loc>
     
     <lastmod>2020-06-01T17:47:09.772Z</lastmod>
