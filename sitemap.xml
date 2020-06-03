@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/04/LeetCode-224-Basic-Calculator/</loc>
+    
+    <lastmod>2020-06-03T19:38:32.629Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/03/LeetCode-117-Populating-Next-Right-Pointers-in-Each-Node-II/</loc>
     
     <lastmod>2020-06-02T19:47:42.430Z</lastmod>
