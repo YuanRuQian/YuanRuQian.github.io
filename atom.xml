@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-07T10:49:49.651Z</updated>
+  <updated>2020-06-08T04:55:22.709Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 40. Combination Sum II</title>
+    <link href="http://yoursite.com/2020/06/08/LeetCode-40-Combination-Sum-II/"/>
+    <id>http://yoursite.com/2020/06/08/LeetCode-40-Combination-Sum-II/</id>
+    <published>2020-06-08T04:54:20.000Z</published>
+    <updated>2020-06-08T04:55:22.709Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a collection of candidate numbers (<code>candidates</code>) and a target number (<code>target</code>), find all unique combinations in <code>candidates</code> where the candidate numbers sums to <code>target</code>.</p><p>Each number in <code>candidates</code> may only be used <strong>once</strong> in the combination.</p><p><strong>Note:</strong></p><ul><li>All numbers (including <code>target</code>) will be positive integers.</li><li>The solution set must not contain duplicate combinations.</li></ul><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates &#x3D; [10,1,2,7,6,1,5], target &#x3D; 8,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [1, 7],</span><br><span class="line">  [1, 2, 5],</span><br><span class="line">  [2, 6],</span><br><span class="line">  [1, 1, 6]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: candidates &#x3D; [2,5,2,1,2], target &#x3D; 5,</span><br><span class="line">A solution set is:</span><br><span class="line">[</span><br><span class="line">  [1,2,2],</span><br><span class="line">  [5]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">candidates</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">target</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> combinationSum2 = <span class="function"><span class="keyword">function</span>(<span class="params">candidates, target</span>) </span>&#123;</span><br><span class="line">    candidates.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>a-b);</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> dfs = <span class="function"><span class="keyword">function</span>(<span class="params">id,n,comb</span>) </span>&#123;</span><br><span class="line">        <span class="comment">// id : index of current element, n : target , comb : path array</span></span><br><span class="line">        <span class="keyword">if</span>(n===<span class="number">0</span>) &#123;</span><br><span class="line">            res.push(comb);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=id;i&lt;candidates.length;i++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(candidates[i]&lt;=n) &#123;</span><br><span class="line">                dfs(i+<span class="number">1</span>, n - candidates[i], [...comb, candidates[i]]);</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">while</span>(candidates[i+<span class="number">1</span>]===candidates[i]) &#123;</span><br><span class="line">                  i++;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">    &#125;</span><br><span class="line">    dfs(<span class="number">0</span>,target,[]);</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a collection of candidate numbers (&lt;code&gt;candidates&lt;/code&gt;) and a target number (&lt;code&gt;target&lt;/code&gt;), find all unique
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Data Analysis with R: College Admission</title>
@@ -492,31 +517,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Given an array &lt;code&gt;nums&lt;/code&gt; of &lt;em&gt;n&lt;/em&gt; integers where &lt;em&gt;n&lt;/em&gt; &amp;gt; 1, return an array &lt;code&gt;output&lt;/code&gt; such th
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 416. Partition Equal Subset Sum</title>
-    <link href="http://yoursite.com/2020/05/22/LeetCode-416-Partition-Equal-Subset-Sum/"/>
-    <id>http://yoursite.com/2020/05/22/LeetCode-416-Partition-Equal-Subset-Sum/</id>
-    <published>2020-05-22T04:20:45.000Z</published>
-    <updated>2020-05-22T04:51:44.660Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a <strong>non-empty</strong> array containing <strong>only positive integers</strong>, find if the array can be partitioned into two subsets such that the sum of elements in both subsets is equal.</p><p><strong>Note:</strong></p><ol type="1"><li>Each of the array element will not exceed 100.</li><li>The array size will not exceed 200.</li></ol><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: [1, 5, 11, 5]</span><br><span class="line"></span><br><span class="line">Output: true</span><br><span class="line"></span><br><span class="line">Explanation: The array can be partitioned as [1, 5, 5] and [11].</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> canPartition = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    nums.forEach(<span class="function"><span class="params">num</span> =&gt;</span> &#123;sum+=num&#125;);</span><br><span class="line">    <span class="keyword">if</span> ((sum &amp; <span class="number">1</span>) === <span class="number">1</span>) &#123;</span><br><span class="line">        <span class="comment">// the sum is even or odd ? if the sum is odd then this definately won't happen!</span></span><br><span class="line">        <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    sum /= <span class="number">2</span>;</span><br><span class="line">    <span class="comment">// the sum is sum/2 because it is a partition equal!!!</span></span><br><span class="line">    <span class="keyword">let</span> dp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=nums.length;i++) &#123;</span><br><span class="line">        dp.push(<span class="built_in">Array</span>(sum+<span class="number">1</span>).fill(<span class="literal">false</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// dp[i][j] whether in the first i elements we can get sum j</span></span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;=nums.length; i++) &#123;</span><br><span class="line">        dp[i][<span class="number">0</span>] = <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;= sum; j++) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][j] = <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">1</span>; i &lt;=nums.length; i++) &#123;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">let</span> j = <span class="number">1</span>; j &lt;=sum; j++) &#123;</span><br><span class="line">            dp[i][j] = dp[i<span class="number">-1</span>][j];</span><br><span class="line">            <span class="keyword">if</span> (j &gt;= nums[i<span class="number">-1</span>]) &#123;</span><br><span class="line">                dp[i][j] = (dp[i][j] || dp[i<span class="number">-1</span>][j-nums[i<span class="number">-1</span>]]);</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> dp[nums.length][sum];</span><br><span class="line">    </span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array containing &lt;strong&gt;only positive integers&lt;/strong&gt;, find if the array can be partit
       
     
     </summary>
