@@ -2,16 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
-    <loc>http://yoursite.com/2020/06/08/LeetCode-40-Combination-Sum-II/</loc>
+    <loc>http://yoursite.com/2020/06/08/R-Data-Analysis-Where-it-Pays-to-Attend-College/</loc>
     
-    <lastmod>2020-06-08T04:55:22.709Z</lastmod>
+    <lastmod>2020-06-08T05:27:26.538Z</lastmod>
     
   </url>
   
   <url>
     <loc>http://yoursite.com/2020/06/06/Data-Analysis-with-R-College-Admission/</loc>
     
-    <lastmod>2020-06-07T10:49:49.651Z</lastmod>
+    <lastmod>2020-06-08T05:13:50.654Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/06/08/LeetCode-40-Combination-Sum-II/</loc>
+    
+    <lastmod>2020-06-08T04:55:22.709Z</lastmod>
     
   </url>
   
