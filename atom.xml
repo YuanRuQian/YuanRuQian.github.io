@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-08T15:00:35.653Z</updated>
+  <updated>2020-06-09T08:50:23.600Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,60 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2020-德勤-STEM-summer-intern-挂经</title>
+    <link href="http://yoursite.com/2020/06/09/2020-%E5%BE%B7%E5%8B%A4-STEM-summer-intern-%E6%8C%82%E7%BB%8F/"/>
+    <id>http://yoursite.com/2020/06/09/2020-%E5%BE%B7%E5%8B%A4-STEM-summer-intern-%E6%8C%82%E7%BB%8F/</id>
+    <published>2020-06-09T07:48:25.000Z</published>
+    <updated>2020-06-09T08:50:23.600Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>申请职位 ： Project Intern - STEM Majors (For External Client Services) - Guangzhou</p></blockquote><p>面试的姐姐上来让我做了一小段英文的自我介绍</p><p>然后问我是否了解这个部门做啥（我如实回答不知道😂）</p><p><del>之前我的猜想是开发外包但是没敢说</del></p><p>面试官说技术咨询总部在重庆 广州是分部 大概100来个人</p><p>然后问了我的项目经历（很尴尬 因为我一直在刷题和忙学校的课程没有什么项目 有的也特别简单）</p><p>感觉确实和互联网大厂不太一样</p><p>如果说大厂是刷题+基础知识</p><p>IT咨询 则是 实践能力 你有没有做过项目？有没有开发经历？因为进去就是要上手做活的</p><p>接着问了我有什么优点值得</p><p>然后问了一些技术问题：</p><ul><li>数据库接触过吗？怎么优化查询？（我答的不好，因为我一年多没碰过了）</li><li>Java 怎么样？（感觉我凉凉了 他们很重视Java的样子）</li><li>学校教的啥框架？（我回答 微软全家桶 .NET + SQL Server + Xamarin 都是C#的东西 感觉更加 雪上加霜）</li></ul><p>最后有啥要问的</p><ul><li>我问面试官能否给我一点建议（建议我做复杂点的项目）</li><li>我问是不是咨询不太像大厂螺丝钉，前端后端什么的分的比较清楚，而是想招 General SDE，做啥具体看组（是的，所以需要你不停学习新技术）</li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;申请职位 ： Project Intern - STEM Majors (For External Client Services) - Guangzhou&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;p&gt;面试的姐姐上来让我做了一小段英文的自我介绍&lt;/p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 41. First Missing Positive</title>
+    <link href="http://yoursite.com/2020/06/09/LeetCode-41-First-Missing-Positive/"/>
+    <id>http://yoursite.com/2020/06/09/LeetCode-41-First-Missing-Positive/</id>
+    <published>2020-06-09T07:47:40.000Z</published>
+    <updated>2020-06-09T08:41:03.664Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given an unsorted integer array, find the smallest missing positive integer.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [1,2,0]</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,4,-1,1]</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [7,8,9,11,12]</span><br><span class="line">Output: 1</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><p>Your algorithm should run in <em>O</em>(<em>n</em>) time and uses constant extra space.</p></blockquote><p>O(N) =&gt; First sort the array , put every element into the right place if I can</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> firstMissingPositive = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> swap = <span class="function"><span class="keyword">function</span>(<span class="params">a,b</span>) </span>&#123;</span><br><span class="line">        <span class="keyword">let</span> t = nums[a];</span><br><span class="line">        nums[a] = nums[b]</span><br><span class="line">        nums[b] = t;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">while</span>(i&lt;nums.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[i]&gt;<span class="number">0</span> &amp;&amp; nums[i]&lt;=nums.length &amp;&amp; nums[nums[i]<span class="number">-1</span>]!==nums[i] ) &#123;</span><br><span class="line">            swap(i,nums[i]<span class="number">-1</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            i++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">  <span class="comment">// Don't use for loop or you will find some glitch after swap</span></span><br><span class="line">  <span class="comment">// Like [...,3,4,1...]</span></span><br><span class="line">  <span class="comment">// 1 comes after and would be swap to a place not considering again</span></span><br><span class="line">  <span class="comment">// Remember to wait to check the current combination after the swap !!!</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;nums.length;j++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(nums[j]!=j+<span class="number">1</span>) <span class="keyword">return</span> j+<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> nums.length+<span class="number">1</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given an unsorted integer array, find the smallest missing positive integer.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
+&lt;figure 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>R Data Analysis:Where it Pays to Attend College</title>
@@ -468,56 +522,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given a 2D binary matrix filled with 0’s and 1’s, find the largest rectangle containing only 1’s and return its area.&lt;/p&gt;
 &lt;p
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 494. Target Sum</title>
-    <link href="http://yoursite.com/2020/05/23/LeetCode-494-Target-Sum/"/>
-    <id>http://yoursite.com/2020/05/23/LeetCode-494-Target-Sum/</id>
-    <published>2020-05-23T07:17:46.000Z</published>
-    <updated>2020-05-23T08:44:19.024Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols <code>+</code> and <code>-</code>. For each integer, you should choose one from <code>+</code> and <code>-</code> as its new symbol.</p><p>Find out how many ways to assign symbols to make sum of integers equal to target S.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Input: nums is [1, 1, 1, 1, 1], S is 3. </span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line"></span><br><span class="line">-1+1+1+1+1 &#x3D; 3</span><br><span class="line">+1-1+1+1+1 &#x3D; 3</span><br><span class="line">+1+1-1+1+1 &#x3D; 3</span><br><span class="line">+1+1+1-1+1 &#x3D; 3</span><br><span class="line">+1+1+1+1-1 &#x3D; 3</span><br><span class="line"></span><br><span class="line">There are 5 ways to assign symbols to make the sum of nums be target 3.</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><ol type="1"><li>The length of the given array is positive and will not exceed 20.</li><li>The sum of elements in the given array will not exceed 1000.</li><li>Your output answer is guaranteed to be fitted in a 32-bit integer.</li></ol></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">S</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// classic knapsack </span></span><br><span class="line"><span class="keyword">var</span> findTargetSumWays = <span class="function"><span class="keyword">function</span>(<span class="params">nums, S</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    nums.forEach(<span class="function"><span class="params">num</span> =&gt;</span> &#123;sum+=num&#125;);</span><br><span class="line">    <span class="keyword">if</span>(S&lt;-sum || S&gt;sum) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> dp = [];</span><br><span class="line">  <span class="comment">// dp[i][j] : the number of ways for first i-th element to reach a sum j</span></span><br><span class="line">  <span class="comment">// dp[i][j] = dp[i-1][j+nums[i]] + dp[i-1][j-nums[i]</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=nums.length;i++) &#123;</span><br><span class="line">        dp.push(<span class="built_in">Array</span>(<span class="number">2</span>*sum+<span class="number">1</span>).fill(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    dp[<span class="number">0</span>][<span class="number">0</span>+sum] = <span class="number">1</span>;</span><br><span class="line">  <span class="comment">// at 0th step, the solution number to sum = 0 is 1.</span></span><br><span class="line">  <span class="comment">// The range of sum of all elements is [-sum, sum].</span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i = <span class="number">1</span>; i&lt;=nums.length; i++)&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j = <span class="number">0</span>; j &lt; <span class="number">2</span> * sum + <span class="number">1</span>; j++)&#123;</span><br><span class="line">          <span class="keyword">if</span>(j+nums[i<span class="number">-1</span>]&lt;<span class="number">2</span>*sum+<span class="number">1</span>) dp[i][j]+=dp[i<span class="number">-1</span>][j+nums[i<span class="number">-1</span>]];</span><br><span class="line">          <span class="keyword">if</span>(j-nums[i<span class="number">-1</span>]&gt;=<span class="number">0</span>) dp[i][j] += dp[i<span class="number">-1</span>][j-nums[i<span class="number">-1</span>]];</span><br><span class="line">        &#125;</span><br><span class="line">      &#125;</span><br><span class="line">      <span class="keyword">return</span> dp[nums.length][sum + S];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>For explanation, see this <a href="https://leetcode.com/problems/target-sum/discuss/97335/Short-Java-DP-Solution-with-Explanation/101899" target="_blank" rel="noopener">post</a></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;You are given a list of non-negative integers, a1, a2, ..., an, and a target, S. Now you have 2 symbols &lt;code&gt;+&lt;/code&gt; and &lt;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 240. Search a 2D Matrix II</title>
-    <link href="http://yoursite.com/2020/05/23/LeetCode-240-Search-a-2D-Matrix-II/"/>
-    <id>http://yoursite.com/2020/05/23/LeetCode-240-Search-a-2D-Matrix-II/</id>
-    <published>2020-05-23T06:23:21.000Z</published>
-    <updated>2020-05-23T07:15:51.538Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Write an efficient algorithm that searches for a value in an <em>m</em> x <em>n</em> matrix. This matrix has the following properties:</p><ul><li>Integers in each row are sorted in ascending from left to right.</li><li>Integers in each column are sorted in ascending from top to bottom.</li></ul><p><strong>Example:</strong></p><p>Consider the following matrix:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [1,   4,  7, 11, 15],</span><br><span class="line">  [2,   5,  8, 12, 19],</span><br><span class="line">  [3,   6,  9, 16, 22],</span><br><span class="line">  [10, 13, 14, 17, 24],</span><br><span class="line">  [18, 21, 23, 26, 30]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>Given target = <code>5</code>, return <code>true</code>.</p><p>Given target = <code>20</code>, return <code>false</code>.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">matrix</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">target</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// O(m+n)</span></span><br><span class="line"><span class="keyword">var</span> searchMatrix = <span class="function"><span class="keyword">function</span>(<span class="params">matrix, target</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!matrix || matrix.length===<span class="number">0</span> || matrix[<span class="number">0</span>].length===<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> row = <span class="number">0</span>, col = matrix[<span class="number">0</span>].length<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">while</span>(col&gt;=<span class="number">0</span> &amp;&amp; row&lt;matrix.length) &#123;</span><br><span class="line">        <span class="keyword">if</span>(target===matrix[row][col]) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(target&lt;matrix[row][col]) &#123;</span><br><span class="line">            col--;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            row++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Write an efficient algorithm that searches for a value in an &lt;em&gt;m&lt;/em&gt; x &lt;em&gt;n&lt;/em&gt; matrix. This matrix has the following p
       
     
     </summary>
