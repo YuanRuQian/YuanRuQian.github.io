@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-16T05:54:11.932Z</updated>
+  <updated>2020-06-16T08:35:57.168Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 179. Largest Number</title>
+    <link href="http://yoursite.com/2020/06/16/LeetCode-179-Largest-Number/"/>
+    <id>http://yoursite.com/2020/06/16/LeetCode-179-Largest-Number/</id>
+    <published>2020-06-16T08:33:49.000Z</published>
+    <updated>2020-06-16T08:35:57.168Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a list of non negative integers, arrange them such that they form the largest number.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [10,2]</span><br><span class="line">Output: &quot;210&quot;</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: [3,30,34,5,9]</span><br><span class="line">Output: &quot;9534330&quot;</span><br></pre></td></tr></table></figure><p><strong>Note:</strong> The result may be very large, so you need to return a string instead of an integer.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Explot JS features</span></span><br><span class="line"><span class="comment">// Kinda cheat (in a good way ?)</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> largestNumber = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    nums.sort(<span class="function">(<span class="params">a,b</span>)=&gt;</span>&#123;</span><br><span class="line">        <span class="keyword">return</span> ((b+<span class="string">''</span>+a)-(a+<span class="string">''</span>+b));</span><br><span class="line">    &#125;);</span><br><span class="line">    <span class="keyword">return</span> nums.join(<span class="string">''</span>).replace(<span class="regexp">/^0*/</span>,<span class="string">''</span>) || <span class="string">'0'</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a list of non negative integers, arrange them such that they form the largest number.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example 1:&lt;/stron
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 856. Score of Parentheses</title>
@@ -497,31 +523,6 @@
 &lt;p&gt;Given a binary tree, return the sum of values of its deepest leaves.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;&lt;img 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 621. Task Scheduler</title>
-    <link href="http://yoursite.com/2020/05/28/LeetCode-621-Task-Scheduler/"/>
-    <id>http://yoursite.com/2020/05/28/LeetCode-621-Task-Scheduler/</id>
-    <published>2020-05-28T06:25:26.000Z</published>
-    <updated>2020-05-29T10:26:06.886Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent different tasks. Tasks could be done without original order. Each task could be done in one interval. For each interval, CPU could finish one task or just be idle.</p><p>However, there is a non-negative cooling interval <strong>n</strong> that means between two <strong>same tasks</strong>, there must be at least n intervals that CPU are doing different tasks or just be idle.</p><p>You need to return the <strong>least</strong> number of intervals the CPU will take to finish all the given tasks.</p><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: tasks &#x3D; [&quot;A&quot;,&quot;A&quot;,&quot;A&quot;,&quot;B&quot;,&quot;B&quot;,&quot;B&quot;], n &#x3D; 2</span><br><span class="line">Output: 8</span><br><span class="line">Explanation: A -&gt; B -&gt; idle -&gt; A -&gt; B -&gt; idle -&gt; A -&gt; B.</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li>The number of tasks is in the range <code>[1, 10000]</code>.</li><li>The integer <code>n</code> is in the range <code>[0, 100]</code>.</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;character[]&#125;</span> <span class="variable">tasks</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> leastInterval = <span class="function"><span class="keyword">function</span>(<span class="params">tasks, n</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> map = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">let</span> maxValCount = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> maxVal = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> task <span class="keyword">of</span> tasks) &#123;</span><br><span class="line">        <span class="keyword">let</span> tVal = map.has(task) ? map.get(task)+<span class="number">1</span>: <span class="number">1</span>;</span><br><span class="line">        map.set(task, tVal);</span><br><span class="line">        <span class="keyword">if</span>(tVal &gt; maxVal)&#123;</span><br><span class="line">            maxVal = tVal;</span><br><span class="line">            maxValCount = <span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(tVal === maxVal)&#123;</span><br><span class="line">            maxValCount++;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">Math</span>.max(tasks.length, (maxVal<span class="number">-1</span>)*(n+<span class="number">1</span>)+maxValCount);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><p>See this <a href="https://leetcode.com/problems/task-scheduler/discuss/401103/simple-Javascript-idle-slots-1-pass-with-detailed-description" target="_blank" rel="noopener">post</a> for explanation</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a char array representing tasks CPU need to do. It contains capital letters A to Z where different letters represent d
       
     
     </summary>
