@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-19T15:57:23.003Z</updated>
+  <updated>2020-06-19T19:39:25.647Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Why I wanna be a polyglot</title>
+    <link href="http://yoursite.com/2020/06/20/Why-I-wanna-be-a-polyglot/"/>
+    <id>http://yoursite.com/2020/06/20/Why-I-wanna-be-a-polyglot/</id>
+    <published>2020-06-19T19:17:14.000Z</published>
+    <updated>2020-06-19T19:39:25.647Z</updated>
+    
+    <content type="html"><![CDATA[<p>Polyglot is not a new thing.</p><p>People in Singapore, Netherland, Switzerland, Scandinavia countries and many other areas can speak several languages from a very young age.</p><p>And I know a few polyglots in real life.</p><p>My uncle is a polyglot. He was already a fluent English speaker in college, which was a rare thing in China. Then he went to work in the Middle East and learnt arabic. After that he learnt French.</p><p>Another impressive polyglot is a boy from Czechoslovakia I met in a summer school. He spoke English so good that you can not tell if he was American. Apart from English, he could speak at least five European languages. And he was only 14 or 15!</p><p>Some of the elder generation in my family know Russian, Cantonese, Shanghainese and a little bit English. I think dialects like Shanghainese can also count? So maybe they are polyglots too ...</p><p>Currently, I am using some apps to learn Japanese.</p><p>I am very into Japanese culture so this is definitely not a burden to me. Cuz I watched a ton of anime and listened to a lot of Japanese indie songs, I find it not hard for me to learn Japanese.</p><p>And here is my bucket list about language learning :</p><ul><li>Japanese</li><li>French</li><li>German</li><li>Korean</li><li>Cantonese</li><li>Shanghainese</li><li>Italian</li><li>Spanish</li><li>...</li></ul><p>Language learning is fun!</p><p>I don't know why but I'm naturally drawn to foreign languages and dialects.</p><p>Knowing Japanese / French / German can give me an edge in workplace. Maybe I will work in a foreign country ( I'm really looking forward to foreign working opportunities ).</p><p>Also, learning new languages keep my brain running smoothly.</p><p>So many benefits! I can't see why I shouldn't be a polyglot.</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;Polyglot is not a new thing.&lt;/p&gt;
+&lt;p&gt;People in Singapore, Netherland, Switzerland, Scandinavia countries and many other areas can speak se
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Hobby" scheme="http://yoursite.com/tags/Hobby/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 380. Insert Delete GetRandom O(1)</title>
@@ -504,31 +529,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;You are given a &lt;strong&gt;perfect binary tree&lt;/strong&gt; where all leaves are on the same level, and every parent has two childr
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 77. Combinations</title>
-    <link href="http://yoursite.com/2020/06/02/LeetCode-77-Combinations/"/>
-    <id>http://yoursite.com/2020/06/02/LeetCode-77-Combinations/</id>
-    <published>2020-06-01T17:42:12.000Z</published>
-    <updated>2020-06-01T17:47:09.772Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given two integers <em>n</em> and <em>k</em>, return all possible combinations of <em>k</em> numbers out of 1 … <em>n</em>.</p><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: n &#x3D; 4, k &#x3D; 2</span><br><span class="line">Output:</span><br><span class="line">[</span><br><span class="line">  [2,4],</span><br><span class="line">  [3,4],</span><br><span class="line">  [2,3],</span><br><span class="line">  [1,2],</span><br><span class="line">  [1,3],</span><br><span class="line">  [1,4],</span><br><span class="line">]</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">n</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">k</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> combine = <span class="function"><span class="keyword">function</span>(<span class="params">n, k</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> p = <span class="built_in">Array</span>(k).fill(<span class="number">0</span>);</span><br><span class="line">    <span class="keyword">while</span>(i&gt;=<span class="number">0</span>) &#123;</span><br><span class="line">        p[i]++;</span><br><span class="line">        <span class="keyword">if</span>(p[i]&gt;n) i--;</span><br><span class="line">        <span class="keyword">else</span> <span class="keyword">if</span>(i===k<span class="number">-1</span>) res.push(p.slice(<span class="number">0</span>));</span><br><span class="line">        <span class="keyword">else</span> &#123;</span><br><span class="line">            ++i;</span><br><span class="line">            p[i] = p[i<span class="number">-1</span>];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given two integers &lt;em&gt;n&lt;/em&gt; and &lt;em&gt;k&lt;/em&gt;, return all possible combinations of &lt;em&gt;k&lt;/em&gt; numbers out of 1 … &lt;em&gt;n&lt;/em&gt;.&lt;
       
     
     </summary>
