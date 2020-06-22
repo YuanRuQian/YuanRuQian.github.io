@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-06-20T15:02:06.413Z</updated>
+  <updated>2020-06-22T10:31:29.773Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 1329. Sort the Matrix Diagonally</title>
+    <link href="http://yoursite.com/2020/06/22/LeetCode-1329-Sort-the-Matrix-Diagonally/"/>
+    <id>http://yoursite.com/2020/06/22/LeetCode-1329-Sort-the-Matrix-Diagonally/</id>
+    <published>2020-06-22T10:29:02.000Z</published>
+    <updated>2020-06-22T10:31:29.773Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a <code>m * n</code> matrix <code>mat</code> of integers, sort it diagonally in ascending order from the top-left to the bottom-right then return the sorted array.</p><p><strong>Example 1:</strong></p><figure><img src="https://assets.leetcode.com/uploads/2020/01/21/1482_example_1_2.png" alt="img" /><figcaption>img</figcaption></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: mat &#x3D; [[3,3,1,1],[2,2,1,2],[1,1,1,2]]</span><br><span class="line">Output: [[1,1,1,1],[1,2,2,2],[1,2,3,3]]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>m == mat.length</code></li><li><code>n == mat[i].length</code></li><li><code>1 &lt;= m, n &lt;= 100</code></li><li><code>1 &lt;= mat[i][j] &lt;= 100</code></li></ul></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] diagonalSort(<span class="keyword">int</span>[][] mat) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = mat.length, n = mat[<span class="number">0</span>].length;</span><br><span class="line">        <span class="comment">// m:rows, n:columns</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> r=m-<span class="number">1</span>,c=<span class="number">0</span>;r&gt;=<span class="number">0</span>;r--) &#123;</span><br><span class="line">            <span class="comment">// run down the first column</span></span><br><span class="line">            fill(mat,m,n,r,c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">1</span>,r=<span class="number">0</span>;c&lt;n-<span class="number">1</span>;c++) &#123;</span><br><span class="line">            <span class="comment">// run down the first row (except for the first element)</span></span><br><span class="line">            fill(mat,m,n,r,c);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> mat;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fill</span><span class="params">(<span class="keyword">int</span>[][] mat,<span class="keyword">int</span> m,<span class="keyword">int</span> n,<span class="keyword">int</span> r,<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i+r&lt;m &amp;&amp; i+c&lt;n;i++) &#123;</span><br><span class="line">            arr.add(mat[r+i][c+i]);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.sort(arr);</span><br><span class="line">      <span class="comment">// sort the array list</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j+r&lt;m &amp;&amp; j+c&lt;n;j++) &#123;</span><br><span class="line">            mat[r+j][c+j] = arr.get(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a &lt;code&gt;m * n&lt;/code&gt; matrix &lt;code&gt;mat&lt;/code&gt; of integers, sort it diagonally in ascending order from the top-left to t
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 783. Minimum Distance Between BST Nodes</title>
@@ -503,32 +528,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given an unsorted array, find the maximum difference between the successive elements in its sorted form.&lt;/p&gt;
 &lt;p&gt;Return 0 if 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 224. Basic Calculator</title>
-    <link href="http://yoursite.com/2020/06/04/LeetCode-224-Basic-Calculator/"/>
-    <id>http://yoursite.com/2020/06/04/LeetCode-224-Basic-Calculator/</id>
-    <published>2020-06-03T18:33:47.000Z</published>
-    <updated>2020-06-03T19:38:32.629Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Implement a basic calculator to evaluate a simple expression string.</p><p>The expression string may contain open <code>(</code> and closing parentheses <code>)</code>, the plus <code>+</code> or minus sign <code>-</code>, <strong>non-negative</strong> integers and empty spaces ``.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;1 + 1&quot;</span><br><span class="line">Output: 2</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot; 2-1 + 2 &quot;</span><br><span class="line">Output: 3</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: &quot;(1+(4+5+2)-3)+(6+8)&quot;</span><br><span class="line">Output: 23</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><ul><li>You may assume that the given expression is always valid.</li><li><strong>Do not</strong> use the <code>eval</code> built-in library function.</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> calculate = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (s.length === <span class="number">0</span>) <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> stack  = [];</span><br><span class="line">    <span class="keyword">let</span> res = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> num = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> sign = <span class="number">1</span>; </span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> c = s[i];</span><br><span class="line">        <span class="keyword">if</span>(c&gt;=<span class="string">'0'</span> &amp;&amp; c&lt;=<span class="string">'9'</span>) &#123;</span><br><span class="line">            num = num*<span class="number">10</span> + <span class="built_in">parseInt</span>(c);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (c===<span class="string">'+'</span> || c===<span class="string">'-'</span>) &#123;</span><br><span class="line">            res += sign*num;</span><br><span class="line">            sign = (stack[stack.length<span class="number">-1</span>]||<span class="number">1</span>)*(c===<span class="string">'+'</span>?<span class="number">1</span>:<span class="number">-1</span>);</span><br><span class="line">            num = <span class="number">0</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(c===<span class="string">'('</span>) &#123;</span><br><span class="line">            stack.push(sign);</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span>(c===<span class="string">')'</span>)&#123;</span><br><span class="line">            stack.pop();</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    res+=sign*num;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Implement a basic calculator to evaluate a simple expression string.&lt;/p&gt;
-&lt;p&gt;The expression string may contain open &lt;code&gt;(&lt;/
       
     
     </summary>

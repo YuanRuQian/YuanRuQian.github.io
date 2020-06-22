@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/22/LeetCode-1329-Sort-the-Matrix-Diagonally/</loc>
+    
+    <lastmod>2020-06-22T10:31:29.773Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/20/LeetCode-783-Minimum-Distance-Between-BST-Nodes/</loc>
     
     <lastmod>2020-06-20T15:02:06.413Z</lastmod>
