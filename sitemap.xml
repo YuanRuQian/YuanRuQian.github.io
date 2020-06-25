@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/25/LeetCode-145-Binary-Tree-Postorder-Traversal/</loc>
+    
+    <lastmod>2020-06-25T02:43:15.714Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/24/LeetCode-912-Sort-an-Array/</loc>
     
     <lastmod>2020-06-24T03:33:20.403Z</lastmod>
