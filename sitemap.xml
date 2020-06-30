@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/06/30/LeetCode-451-Sort-Characters-By-Frequency/</loc>
+    
+    <lastmod>2020-06-30T07:31:33.800Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/06/29/LeetCode-890-Find-and-Replace-Pattern/</loc>
     
     <lastmod>2020-06-29T15:46:08.754Z</lastmod>
