@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/03/LeetCode-367-Valid-Perfect-Square/</loc>
+    
+    <lastmod>2020-07-03T11:55:32.173Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/02/LeetCode-877-Stone-Game/</loc>
     
     <lastmod>2020-07-02T12:55:41.108Z</lastmod>
