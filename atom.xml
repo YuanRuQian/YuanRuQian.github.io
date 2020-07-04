@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-03T11:55:32.173Z</updated>
+  <updated>2020-07-04T02:10:26.002Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 1104. Path In Zigzag Labelled Binary Tree</title>
+    <link href="http://yoursite.com/2020/07/04/LeetCode-1104-Path-In-Zigzag-Labelled-Binary-Tree/"/>
+    <id>http://yoursite.com/2020/07/04/LeetCode-1104-Path-In-Zigzag-Labelled-Binary-Tree/</id>
+    <published>2020-07-04T01:42:25.000Z</published>
+    <updated>2020-07-04T02:10:26.002Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>In an infinite binary tree where every node has two children, the nodes are labelled in row order.</p><p>In the odd numbered rows (ie., the first, third, fifth,…), the labelling is left to right, while in the even numbered rows (second, fourth, sixth,…), the labelling is right to left.</p><p><img src="https://assets.leetcode.com/uploads/2019/06/24/tree.png" alt="img" /></p><p>Given the <code>label</code> of a node in this tree, return the labels in the path from the root of the tree to the node with that <code>label</code>.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: label &#x3D; 14</span><br><span class="line">Output: [1,3,4,14]</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: label &#x3D; 26</span><br><span class="line">Output: [1,2,6,10,26]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= label &lt;= 10^6</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">label</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> pathInZigZagTree = <span class="function"><span class="keyword">function</span>(<span class="params">label,level=<span class="number">0</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span> &lt;&lt; level &lt;= label) ++level;</span><br><span class="line">    <span class="keyword">let</span> res = [level];</span><br><span class="line">    <span class="keyword">for</span>(;label&gt;=<span class="number">1</span>;label=<span class="built_in">Math</span>.floor(label/<span class="number">2</span>),--level) &#123;</span><br><span class="line">        res[level<span class="number">-1</span>]=label;</span><br><span class="line">        <span class="comment">// now label = ('real' children)/2 =&gt; the real parent</span></span><br><span class="line">        label = (<span class="number">1</span> &lt;&lt; level) - <span class="number">1</span> - label + (<span class="number">1</span> &lt;&lt; (level - <span class="number">1</span>));</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'after:'</span>,label);</span><br><span class="line">        <span class="comment">//  (1 &lt;&lt; level) - 1 : the max element of a level</span></span><br><span class="line">        <span class="comment">//  (1 &lt;&lt; (level - 1)) : the min element of a level</span></span><br><span class="line">        <span class="comment">// now label is the 'real' children before reversing the level</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;In an infinite binary tree where every node has two children, the nodes are labelled in row order.&lt;/p&gt;
+&lt;p&gt;In the odd numbere
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 367. Valid Perfect Square</title>
@@ -496,31 +522,6 @@ You may assu
       
         &lt;blockquote&gt;
 &lt;p&gt;Given a &lt;strong&gt;non-empty&lt;/strong&gt; array of integers, every element appears &lt;em&gt;three&lt;/em&gt; times except for one, which appea
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 1329. Sort the Matrix Diagonally</title>
-    <link href="http://yoursite.com/2020/06/22/LeetCode-1329-Sort-the-Matrix-Diagonally/"/>
-    <id>http://yoursite.com/2020/06/22/LeetCode-1329-Sort-the-Matrix-Diagonally/</id>
-    <published>2020-06-22T10:29:02.000Z</published>
-    <updated>2020-06-22T10:31:29.773Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a <code>m * n</code> matrix <code>mat</code> of integers, sort it diagonally in ascending order from the top-left to the bottom-right then return the sorted array.</p><p><strong>Example 1:</strong></p><figure><img src="https://assets.leetcode.com/uploads/2020/01/21/1482_example_1_2.png" alt="img" /><figcaption>img</figcaption></figure><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: mat &#x3D; [[3,3,1,1],[2,2,1,2],[1,1,1,2]]</span><br><span class="line">Output: [[1,1,1,1],[1,2,2,2],[1,2,3,3]]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>m == mat.length</code></li><li><code>n == mat[i].length</code></li><li><code>1 &lt;= m, n &lt;= 100</code></li><li><code>1 &lt;= mat[i][j] &lt;= 100</code></li></ul></blockquote><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Solution</span> </span>&#123;</span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">int</span>[][] diagonalSort(<span class="keyword">int</span>[][] mat) &#123;</span><br><span class="line">        <span class="keyword">int</span> m = mat.length, n = mat[<span class="number">0</span>].length;</span><br><span class="line">        <span class="comment">// m:rows, n:columns</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> r=m-<span class="number">1</span>,c=<span class="number">0</span>;r&gt;=<span class="number">0</span>;r--) &#123;</span><br><span class="line">            <span class="comment">// run down the first column</span></span><br><span class="line">            fill(mat,m,n,r,c);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> c=<span class="number">1</span>,r=<span class="number">0</span>;c&lt;n-<span class="number">1</span>;c++) &#123;</span><br><span class="line">            <span class="comment">// run down the first row (except for the first element)</span></span><br><span class="line">            fill(mat,m,n,r,c);</span><br><span class="line">        &#125;</span><br><span class="line">        </span><br><span class="line">        <span class="keyword">return</span> mat;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">fill</span><span class="params">(<span class="keyword">int</span>[][] mat,<span class="keyword">int</span> m,<span class="keyword">int</span> n,<span class="keyword">int</span> r,<span class="keyword">int</span> c)</span> </span>&#123;</span><br><span class="line">        List&lt;Integer&gt; arr = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i=<span class="number">0</span>;i+r&lt;m &amp;&amp; i+c&lt;n;i++) &#123;</span><br><span class="line">            arr.add(mat[r+i][c+i]);</span><br><span class="line">        &#125;</span><br><span class="line">        Collections.sort(arr);</span><br><span class="line">      <span class="comment">// sort the array list</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> j=<span class="number">0</span>;j+r&lt;m &amp;&amp; j+c&lt;n;j++) &#123;</span><br><span class="line">            mat[r+j][c+j] = arr.get(j);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a &lt;code&gt;m * n&lt;/code&gt; matrix &lt;code&gt;mat&lt;/code&gt; of integers, sort it diagonally in ascending order from the top-left to t
       
     
     </summary>
