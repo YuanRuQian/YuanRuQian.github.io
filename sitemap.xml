@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/05/LeetCode-119-Pascal-s-Triangle-II/</loc>
+    
+    <lastmod>2020-07-05T02:07:14.745Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/04/LeetCode-1104-Path-In-Zigzag-Labelled-Binary-Tree/</loc>
     
     <lastmod>2020-07-04T02:10:26.002Z</lastmod>
