@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-05T02:07:14.745Z</updated>
+  <updated>2020-07-06T14:54:35.186Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 120. Triangle</title>
+    <link href="http://yoursite.com/2020/07/06/LeetCode-120-Triangle/"/>
+    <id>http://yoursite.com/2020/07/06/LeetCode-120-Triangle/</id>
+    <published>2020-07-06T14:40:31.000Z</published>
+    <updated>2020-07-06T14:54:35.186Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.</p><p>For example, given the following triangle</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">     [2],</span><br><span class="line">    [3,4],</span><br><span class="line">   [6,5,7],</span><br><span class="line">  [4,1,8,3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure><p>The minimum path sum from top to bottom is <code>11</code> (i.e., <strong>2</strong> + <strong>3</strong> + <strong>5</strong> + <strong>1</strong> = 11).</p><p><strong>Note:</strong></p><p>Bonus point if you are able to do this using only <em>O</em>(<em>n</em>) extra space, where <em>n</em> is the total number of rows in the triangle.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">triangle</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> minimumTotal = <span class="function"><span class="keyword">function</span>(<span class="params">triangle</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = triangle.length;</span><br><span class="line">    <span class="keyword">let</span> dp = triangle[len<span class="number">-1</span>];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> layer = len<span class="number">-2</span>;layer&gt;=<span class="number">0</span>;layer--) &#123;</span><br><span class="line">        <span class="comment">// for each level of the triangle</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;=layer;i++) &#123;</span><br><span class="line">            dp[i] = <span class="built_in">Math</span>.min(dp[i+<span class="number">1</span>],dp[i])+triangle[layer][i];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> dp[<span class="number">0</span>];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a triangle, find the minimum path sum from top to bottom. Each step you may move to adjacent numbers on the row below.
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 119. Pascal&#39;s Triangle II</title>
@@ -495,33 +520,6 @@ You may assu
       
         &lt;blockquote&gt;
 &lt;p&gt;Given a matrix of &lt;em&gt;m&lt;/em&gt; x &lt;em&gt;n&lt;/em&gt; elements (&lt;em&gt;m&lt;/em&gt; rows, &lt;em&gt;n&lt;/em&gt; columns), return all elements of the matrix 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 1130. Minimum Cost Tree From Leaf Values</title>
-    <link href="http://yoursite.com/2020/06/23/LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values/"/>
-    <id>http://yoursite.com/2020/06/23/LeetCode-1130-Minimum-Cost-Tree-From-Leaf-Values/</id>
-    <published>2020-06-22T16:27:26.000Z</published>
-    <updated>2020-06-22T18:09:44.774Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given an array <code>arr</code> of positive integers, consider all binary trees such that:</p><ul><li>Each node has either 0 or 2 children;</li><li>The values of <code>arr</code> correspond to the values of each <strong>leaf</strong> in an in-order traversal of the tree. <em>(Recall that a node is a leaf if and only if it has 0 children.)</em></li><li>The value of each non-leaf node is equal to the product of the largest leaf value in its left and right subtree respectively.</li></ul><p>Among all possible binary trees considered, return the smallest possible sum of the values of each non-leaf node. It is guaranteed this sum fits into a 32-bit integer.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Input: arr &#x3D; [6,2,4]</span><br><span class="line">Output: 32</span><br><span class="line">Explanation:</span><br><span class="line">There are two possible trees.  The first has non-leaf node sum 36, and the second has non-leaf node sum 32.</span><br><span class="line"></span><br><span class="line">    24            24</span><br><span class="line">   &#x2F;  \          &#x2F;  \</span><br><span class="line">  12   4        6    8</span><br><span class="line"> &#x2F;  \               &#x2F; \</span><br><span class="line">6    2             2   4</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>2 &lt;= arr.length &lt;= 40</code></li><li><code>1 &lt;= arr[i] &lt;= 15</code></li><li>It is guaranteed that the answer fits into a 32-bit signed integer (ie. it is less than <code>2^31</code>).</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">arr</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> mctFromLeafValues = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> stack = [<span class="literal">Infinity</span>];</span><br><span class="line">    <span class="comment">// request min so fill it with a max number </span></span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> a <span class="keyword">of</span> arr) &#123;</span><br><span class="line">        <span class="keyword">while</span>(stack[stack.length<span class="number">-1</span>]&lt;=a) &#123;</span><br><span class="line">            <span class="comment">// get smaller elements</span></span><br><span class="line">            <span class="keyword">let</span> mid = stack.pop();</span><br><span class="line">            res += mid*<span class="built_in">Math</span>.min(stack[stack.length<span class="number">-1</span>],a);</span><br><span class="line">        &#125;</span><br><span class="line">        stack.push(a);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span> (stack.length &gt; <span class="number">2</span>) &#123;</span><br><span class="line">            res += stack.pop() * stack[stack.length<span class="number">-1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given an array &lt;code&gt;arr&lt;/code&gt; of positive integers, consider all binary trees such that:&lt;/p&gt;
-&lt;ul&gt;
-&lt;li&gt;Each node has either
       
     
     </summary>
