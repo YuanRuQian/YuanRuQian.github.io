@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/08/LeetCode-1017-Convert-to-Base-2/</loc>
+    
+    <lastmod>2020-07-08T15:01:52.399Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/07/LeetCode-95-Unique-Binary-Search-Trees-II/</loc>
     
     <lastmod>2020-07-07T15:09:27.850Z</lastmod>
