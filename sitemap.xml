@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/11/LeetCode-301-Remove-Invalid-Parentheses/</loc>
+    
+    <lastmod>2020-07-11T11:08:59.302Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/11/LeetCode-295-Find-Median-from-Data-Stream/</loc>
+    
+    <lastmod>2020-07-11T10:28:35.980Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/11/LeetCode-297-Serialize-and-Deserialize-Binary-Tree/</loc>
     
     <lastmod>2020-07-11T03:19:23.583Z</lastmod>
