@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/12/LeetCode-23-Merge-k-Sorted-Lists/</loc>
+    
+    <lastmod>2020-07-12T09:31:31.847Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/</loc>
     
     <lastmod>2020-07-12T04:24:49.780Z</lastmod>
