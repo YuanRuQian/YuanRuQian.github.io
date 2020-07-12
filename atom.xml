@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-11T11:08:59.302Z</updated>
+  <updated>2020-07-12T03:43:02.601Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,57 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 72. Edit Distance</title>
+    <link href="http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/"/>
+    <id>http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/</id>
+    <published>2020-07-12T03:13:06.000Z</published>
+    <updated>2020-07-12T03:43:02.601Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given two words <em>word1</em> and <em>word2</em>, find the minimum number of operations required to convert <em>word1</em> to <em>word2</em>.</p><p>You have the following 3 operations permitted on a word:</p><ol><li>Insert a character</li><li>Delete a character</li><li>Replace a character</li></ol><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;horse&quot;, word2 &#x3D; &quot;ros&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: </span><br><span class="line">horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)</span><br><span class="line">rorse -&gt; rose (remove &#39;r&#39;)</span><br><span class="line">rose -&gt; ros (remove &#39;e&#39;)</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;intention&quot;, word2 &#x3D; &quot;execution&quot;</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line">intention -&gt; inention (remove &#39;t&#39;)</span><br><span class="line">inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)</span><br><span class="line">enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)</span><br><span class="line">exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)</span><br><span class="line">exection -&gt; execution (insert &#39;u&#39;)</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word1</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word2</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> minDistance = <span class="function"><span class="keyword">function</span>(<span class="params">word1, word2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len1 = word1.length;</span><br><span class="line">    <span class="keyword">let</span> len2 = word2.length;</span><br><span class="line">    <span class="keyword">let</span> dp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;len1+<span class="number">1</span>;i++) &#123;</span><br><span class="line">        dp.push(<span class="built_in">Array</span>(len2+<span class="number">1</span>).fill(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len1;j++) &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>]=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len2;j++) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][j]=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(dp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=len1;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len2;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (word1[i<span class="number">-1</span>]===word2[j<span class="number">-1</span>]) &#123;</span><br><span class="line">                    dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j]=<span class="built_in">Math</span>.min(dp[i<span class="number">-1</span>][j<span class="number">-1</span>],<span class="built_in">Math</span>.min(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]))+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i-1][j-1]+1 replace word1[i-1] with word2[j-1]</span></span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i-1][j]+1 delete word1[i-1] </span></span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i][j-1]+1 insert word2[j]</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[len1][len2];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given two words &lt;em&gt;word1&lt;/em&gt; and &lt;em&gt;word2&lt;/em&gt;, find the minimum number of operations required to convert &lt;em&gt;word1&lt;/em&gt; 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>My first week of intern experience</title>
+    <link href="http://yoursite.com/2020/07/12/My-first-week-of-intern-experience/"/>
+    <id>http://yoursite.com/2020/07/12/My-first-week-of-intern-experience/</id>
+    <published>2020-07-12T00:51:18.000Z</published>
+    <updated>2020-07-12T01:04:28.036Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>From this July, I work as a application dev intern at a insurance tech company.</p><p>80% of my work will in be in React / Uni-app, the rest will be some node.js job.</p><p>Currently I work in the R&amp;D department, doing some simple bug-fixing job and add some features to the existing UI components library.</p></blockquote><h3 id="something-i-wish-i-could-prepare-before-the-internship">Something I wish I could prepare before the internship</h3><h5 id="get-familiar-with-dev-tools">Get familiar with dev tools</h5><ul><li><p>Chrome Dev tools</p><p>Local storage / session storage / check element / change DOM on the fly ....</p><p>You can never be too familiar with Chrome dev tools !!!</p></li><li><p>Your IDE shortcuts</p><p>Before the job I was using JetBrains products ( WebStorm etc.)</p><p>Yet at work we use VSCode</p><p>So be sure to get your hands on the IDE at your workplace to make a smooth transition !</p><p>Also, definitely review how to add debugger / breakpoints ! They will be lifesaver if you are fixing a complex bug.</p></li></ul><h5 id="get-to-know-some-version-control-devops-server-ci-cd-process">Get to know some Version control / DevOps / server / CI / CD process</h5><ul><li><p>Git</p><p>Please try to review some Git teamwork knowledge on <a href="https://learngitbranching.js.org/?locale=en_US" target="_blank" rel="noopener">this free website</a></p><p>At least review the part of <code>rebase</code> and <code>merge</code></p></li></ul>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;From this July, I work as a application dev intern at a insurance tech company.&lt;/p&gt;
+&lt;p&gt;80% of my work will in be in React / 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Work" scheme="http://yoursite.com/tags/Work/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 301. Remove Invalid Parentheses</title>
@@ -469,58 +520,6 @@
     
     
       <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript : Remove the duplicated elements</title>
-    <link href="http://yoursite.com/2020/06/27/JavaScript-Remove-the-duplicated-elements/"/>
-    <id>http://yoursite.com/2020/06/27/JavaScript-Remove-the-duplicated-elements/</id>
-    <published>2020-06-27T08:47:04.000Z</published>
-    <updated>2020-06-27T09:44:46.599Z</updated>
-    
-    <content type="html"><![CDATA[<h3 id="use-set">Use Set</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Set</span>(a);</span><br><span class="line"><span class="built_in">console</span>.log(b);</span><br><span class="line"><span class="comment">// Set(2) &#123;1, 2&#125;</span></span><br></pre></td></tr></table></figure><h3 id="use-map">Use Map</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> b = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">a.forEach(<span class="function">(<span class="params">e</span>)=&gt;</span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(b.has(e)) b.set(e,<span class="literal">true</span>);</span><br><span class="line">  <span class="keyword">else</span> &#123;</span><br><span class="line">    b.set(e,<span class="literal">false</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br><span class="line">b.keys();</span><br><span class="line"><span class="comment">//  &#123;1, 2&#125;</span></span><br></pre></td></tr></table></figure><h3 id="use-loop-on2">Use loop O(N^2)</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</span><br><span class="line">a.sort(<span class="function">(<span class="params">m,n</span>)=&gt;</span>&#123;<span class="keyword">return</span> m-n&#125;);</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;a.length<span class="number">-1</span>;i++) &#123;</span><br><span class="line">  <span class="keyword">if</span>(a[i]===a[i+<span class="number">1</span>]) &#123;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=i+<span class="number">1</span>;j&lt;a.length<span class="number">-1</span>;j++) &#123;</span><br><span class="line">      a[j]=a[j+<span class="number">1</span>];</span><br><span class="line">    &#125;</span><br><span class="line">    a.pop();</span><br><span class="line">    i--;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="comment">// (2) [1, 2]</span></span><br></pre></td></tr></table></figure><h3 id="intersection-difference">Intersection &amp; Difference</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="number">1</span>,<span class="number">2</span>,<span class="number">2</span>,<span class="number">2</span>];</span><br><span class="line"><span class="keyword">let</span> b = [<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> intersection = a.filter(<span class="function"><span class="params">v</span> =&gt;</span> b.includes(v))</span><br><span class="line"><span class="keyword">let</span> difference = a.concat(b).filter(<span class="function"><span class="params">v</span> =&gt;</span> !a.includes(v) || !b.includes(v))</span><br><span class="line">intersection</span><br><span class="line"><span class="comment">// (3) [2, 2, 2]</span></span><br><span class="line"><span class="comment">// there still is the problem of duplicate ...</span></span><br><span class="line">difference</span><br><span class="line"><span class="comment">// (2) [1, 3]</span></span><br></pre></td></tr></table></figure><p><code>includes()</code> can do the job</p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;h3 id=&quot;use-set&quot;&gt;Use Set&lt;/h3&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span c
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaScript : Is this an array ?</title>
-    <link href="http://yoursite.com/2020/06/27/JavaScript-Is-this-an-array/"/>
-    <id>http://yoursite.com/2020/06/27/JavaScript-Is-this-an-array/</id>
-    <published>2020-06-27T08:27:00.000Z</published>
-    <updated>2020-06-27T08:43:38.233Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>How to judge if something is an array in JavaScript ?</p></blockquote><h3 id="modern-browser-only">Modern browser only</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.isArray(obj)</span><br><span class="line"><span class="comment">// Supported by Chrome 5, Firefox 4.0, IE 9, Opera 10.5 and Safari 5</span></span><br><span class="line"><span class="built_in">Array</span>.isArray([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure><h3 id="instance-of">Instance of</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>] <span class="keyword">instanceof</span> <span class="built_in">Array</span></span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure><h3 id="prototype">Prototype</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Array</span>.prototype.isPrototypeOf([<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>])</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure><h3 id="obj.constructor">Obj.constructor</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">[<span class="number">1</span>,<span class="number">2</span>].constructor === <span class="built_in">Array</span></span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure><h3 id="if-you-use-jquery">If you use jQuery</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = [<span class="string">"A"</span>, <span class="string">"AA"</span>, <span class="string">"AAA"</span>];</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>($.isArray(a)) &#123;</span><br><span class="line">  alert(<span class="string">"a is an array!"</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  alert(<span class="string">"a is not an array!"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">// alert "a is an array!"</span></span><br></pre></td></tr></table></figure><h3 id="what-about-typeof">What about typeof 🙅</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">typeof</span> [<span class="number">1</span>,<span class="number">2</span>]</span><br><span class="line"><span class="string">"object"</span>  </span><br><span class="line"><span class="comment">// It just says 'object', so any object will return the same thing </span></span><br><span class="line"><span class="comment">// typeof only returns basic data type</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;How to judge if something is an array in JavaScript ?&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;h3 id=&quot;modern-browser-only&quot;&gt;Modern browser only&lt;/h3
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
     
   </entry>
   

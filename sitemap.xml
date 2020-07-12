@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/</loc>
+    
+    <lastmod>2020-07-12T03:43:02.601Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/12/My-first-week-of-intern-experience/</loc>
+    
+    <lastmod>2020-07-12T01:04:28.036Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/11/LeetCode-301-Remove-Invalid-Parentheses/</loc>
     
     <lastmod>2020-07-11T11:08:59.302Z</lastmod>
