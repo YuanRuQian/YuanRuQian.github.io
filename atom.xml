@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-13T13:50:25.748Z</updated>
+  <updated>2020-07-14T14:47:53.325Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Bead Sort in JavaScript</title>
+    <link href="http://yoursite.com/2020/07/14/Bead-Sort/"/>
+    <id>http://yoursite.com/2020/07/14/Bead-Sort/</id>
+    <published>2020-07-14T13:57:34.000Z</published>
+    <updated>2020-07-14T14:47:53.325Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Probably the most intuitive sorting algorithm ever ...</p><p>O(N*max(arr)) space &amp; time</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> beadSort = <span class="function"><span class="keyword">function</span>(<span class="params">arr</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> max = <span class="built_in">Math</span>.max(...arr);</span><br><span class="line">  <span class="keyword">let</span> beads = [];</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">    beads.push(<span class="built_in">Array</span>(max).fill(<span class="number">0</span>));</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;arr[i];j++) &#123;</span><br><span class="line">      beads[i][j]=<span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// place the beads according to the array</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;max;i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> count=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;arr.length;j++) &#123;</span><br><span class="line">    <span class="keyword">if</span>(beads[j][i]===<span class="number">1</span>) &#123; count++;beads[j][i]=<span class="number">0</span>;&#125;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> k=arr.length<span class="number">-1</span>;k&gt;=arr.length-count;k--) &#123;</span><br><span class="line">    beads[k][i]=<span class="number">1</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">  <span class="comment">// let beads fall according to the 'gravity'</span></span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;arr.length;i++) &#123;</span><br><span class="line">    <span class="keyword">let</span> count = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;max;j++) &#123;</span><br><span class="line">      count+=beads[i][j]===<span class="number">1</span>?<span class="number">1</span>:<span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    arr[i]=count;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">'sorted array:'</span>,arr);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> arr=[<span class="number">7</span>,<span class="number">4</span>,<span class="number">8</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>]</span><br><span class="line">beadSort(arr);</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sorted array: (<span class="number">6</span>) [<span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>, <span class="number">7</span>, <span class="number">8</span>]</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Probably the most intuitive sorting algorithm ever ...&lt;/p&gt;
+&lt;p&gt;O(N*max(arr)) space &amp;amp; time&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Algorithm" scheme="http://yoursite.com/tags/Algorithm/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 1111. Maximum Nesting Depth of Two Valid Parentheses Strings</title>
@@ -487,31 +515,6 @@
 &lt;p&gt;Given a string, sort it in decreasing order based on the frequency of characters.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
 &lt;fi
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 890. Find and Replace Pattern</title>
-    <link href="http://yoursite.com/2020/06/29/LeetCode-890-Find-and-Replace-Pattern/"/>
-    <id>http://yoursite.com/2020/06/29/LeetCode-890-Find-and-Replace-Pattern/</id>
-    <published>2020-06-29T15:43:06.000Z</published>
-    <updated>2020-06-29T15:46:08.754Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>You have a list of <code>words</code> and a <code>pattern</code>, and you want to know which words in <code>words</code> matches the pattern.</p><p>A word matches the pattern if there exists a permutation of letters <code>p</code> so that after replacing every letter <code>x</code> in the pattern with <code>p(x)</code>, we get the desired word.</p><p>(<em>Recall that a permutation of letters is a bijection from letters to letters: every letter maps to another letter, and no two letters map to the same letter.</em>)</p><p>Return a list of the words in <code>words</code> that match the given pattern.</p><p>You may return the answer in any order.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input: words &#x3D; [&quot;abc&quot;,&quot;deq&quot;,&quot;mee&quot;,&quot;aqq&quot;,&quot;dkd&quot;,&quot;ccc&quot;], pattern &#x3D; &quot;abb&quot;</span><br><span class="line">Output: [&quot;mee&quot;,&quot;aqq&quot;]</span><br><span class="line">Explanation: &quot;mee&quot; matches the pattern because there is a permutation &#123;a -&gt; m, b -&gt; e, ...&#125;. </span><br><span class="line">&quot;ccc&quot; does not match the pattern because &#123;a -&gt; c, b -&gt; c, ...&#125; is not a permutation,</span><br><span class="line">since a and b map to the same letter.</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><ul><li><code>1 &lt;= words.length &lt;= 50</code></li><li><code>1 &lt;= pattern.length = words[i].length &lt;= 20</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">words</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">pattern</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findAndReplacePattern = <span class="function"><span class="keyword">function</span>(<span class="params">words, pattern</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> word <span class="keyword">of</span> words) &#123;</span><br><span class="line">        <span class="keyword">if</span> (match(word, pattern)) &#123;</span><br><span class="line">            res.push(word);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// two maps </span></span><br><span class="line"><span class="comment">// check if the pairs are equal in each map</span></span><br><span class="line"><span class="keyword">let</span> match = <span class="function"><span class="keyword">function</span>(<span class="params">s,p</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> map1 = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">let</span> map2 = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;s.length;i++) &#123;</span><br><span class="line">        <span class="keyword">let</span> c1 = s[i];</span><br><span class="line">        <span class="keyword">let</span> c2 = p[i];</span><br><span class="line">        <span class="keyword">if</span> (!map1.has(c1)) &#123;</span><br><span class="line">            map1.set(c1,c2);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (!map2.has(c2)) &#123;</span><br><span class="line">            map2.set(c2,c1);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (map1.get(c1) !== c2 || map2.get(c2) !== c1) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;You have a list of &lt;code&gt;words&lt;/code&gt; and a &lt;code&gt;pattern&lt;/code&gt;, and you want to know which words in &lt;code&gt;words&lt;/code&gt; mat
       
     
     </summary>
