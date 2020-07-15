@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/15/LeetCode-9-Palindrome-Number/</loc>
+    
+    <lastmod>2020-07-15T15:46:46.886Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/14/Bead-Sort-in-JavaScript/</loc>
     
     <lastmod>2020-07-14T14:47:53.325Z</lastmod>

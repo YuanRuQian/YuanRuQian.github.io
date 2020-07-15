@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-14T14:47:53.325Z</updated>
+  <updated>2020-07-15T15:46:46.886Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 9. Palindrome Number</title>
+    <link href="http://yoursite.com/2020/07/15/LeetCode-9-Palindrome-Number/"/>
+    <id>http://yoursite.com/2020/07/15/LeetCode-9-Palindrome-Number/</id>
+    <published>2020-07-15T15:28:15.000Z</published>
+    <updated>2020-07-15T15:46:46.886Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: 121</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: -121</span><br><span class="line">Output: false</span><br><span class="line">Explanation: From left to right, it reads -121. From right to left, it becomes 121-. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Input: 10</span><br><span class="line">Output: false</span><br><span class="line">Explanation: Reads 01 from right to left. Therefore it is not a palindrome.</span><br></pre></td></tr></table></figure><p><strong>Follow up:</strong></p><p>Coud you solve it without converting the integer to a string?</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// vanilla method , convert to a string</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">x</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> s = x.toString();</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">Math</span>.floor(s.length/<span class="number">2</span>);i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(s[i]!==s[s.length-i<span class="number">-1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// convert number to array method</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">x</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPalindrome = <span class="function"><span class="keyword">function</span>(<span class="params">x</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(x&lt;<span class="number">0</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">let</span> arr = [];</span><br><span class="line">    <span class="keyword">let</span> t = x;</span><br><span class="line">    <span class="keyword">while</span>(t&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        arr.unshift(t%<span class="number">10</span>);</span><br><span class="line">        t=<span class="built_in">Math</span>.floor(t/<span class="number">10</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;<span class="built_in">Math</span>.floor(arr.length/<span class="number">2</span>);i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(arr[i]!==arr[arr.length-i<span class="number">-1</span>]) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Determine whether an integer is a palindrome. An integer is a palindrome when it reads the same backward as forward.&lt;/p&gt;
+&lt;p&gt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>Bead Sort in JavaScript</title>
@@ -495,33 +521,6 @@
     
     
       <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 451. Sort Characters By Frequency</title>
-    <link href="http://yoursite.com/2020/06/30/LeetCode-451-Sort-Characters-By-Frequency/"/>
-    <id>http://yoursite.com/2020/06/30/LeetCode-451-Sort-Characters-By-Frequency/</id>
-    <published>2020-06-30T07:06:24.000Z</published>
-    <updated>2020-06-30T07:31:33.800Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a string, sort it in decreasing order based on the frequency of characters.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">&quot;tree&quot;</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">&quot;eert&quot;</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">&#39;e&#39; appears twice while &#39;r&#39; and &#39;t&#39; both appear once.</span><br><span class="line">So &#39;e&#39; must appear before both &#39;r&#39; and &#39;t&#39;. Therefore &quot;eetr&quot; is also a valid answer.</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">&quot;cccaaa&quot;</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">&quot;cccaaa&quot;</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">Both &#39;c&#39; and &#39;a&#39; appear three times, so &quot;aaaccc&quot; is also a valid answer.</span><br><span class="line">Note that &quot;cacaca&quot; is incorrect, as the same characters must be together.</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">&quot;Aabb&quot;</span><br><span class="line"></span><br><span class="line">Output:</span><br><span class="line">&quot;bbAa&quot;</span><br><span class="line"></span><br><span class="line">Explanation:</span><br><span class="line">&quot;bbaA&quot; is also a valid answer, but &quot;Aabb&quot; is incorrect.</span><br><span class="line">Note that &#39;A&#39; and &#39;a&#39; are treated as two different characters.</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">s</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> frequencySort = <span class="function"><span class="keyword">function</span>(<span class="params">s</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> freq = <span class="keyword">new</span> <span class="built_in">Map</span>();</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">const</span> char <span class="keyword">of</span> s) &#123;</span><br><span class="line">        <span class="keyword">if</span> (!freq.has(char)) freq.set(char, <span class="number">0</span>);</span><br><span class="line">        freq.set(char,freq.get(char)+<span class="number">1</span>);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">// count the frequency</span></span><br><span class="line">    freq = [...freq].sort(<span class="function">(<span class="params">a, b</span>) =&gt;</span>&#123;<span class="keyword">return</span> b[<span class="number">1</span>]-a[<span class="number">1</span>]&#125;);</span><br><span class="line">    <span class="keyword">let</span> str = <span class="string">''</span>; </span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> f <span class="keyword">of</span> freq) &#123;</span><br><span class="line">        <span class="keyword">let</span> [char, count] = f;</span><br><span class="line">        str += char.repeat(count);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> str;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a string, sort it in decreasing order based on the frequency of characters.&lt;/p&gt;
-&lt;p&gt;&lt;strong&gt;Example 1:&lt;/strong&gt;&lt;/p&gt;
-&lt;fi
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
