@@ -2,9 +2,23 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/16/LeetCode-26-Remove-Duplicates-from-Sorted-Array/</loc>
+    
+    <lastmod>2020-07-16T15:42:08.067Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/16/LeetCode-14-Longest-Common-Prefix/</loc>
+    
+    <lastmod>2020-07-16T15:29:36.818Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/15/LeetCode-9-Palindrome-Number/</loc>
     
-    <lastmod>2020-07-15T15:46:46.886Z</lastmod>
+    <lastmod>2020-07-16T14:02:54.507Z</lastmod>
     
   </url>
   
