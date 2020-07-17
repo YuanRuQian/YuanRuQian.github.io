@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-16T15:42:08.067Z</updated>
+  <updated>2020-07-17T14:57:37.055Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,55 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 88. Merge Sorted Array</title>
+    <link href="http://yoursite.com/2020/07/17/LeetCode-88-Merge-Sorted-Array/"/>
+    <id>http://yoursite.com/2020/07/17/LeetCode-88-Merge-Sorted-Array/</id>
+    <published>2020-07-17T14:56:59.000Z</published>
+    <updated>2020-07-17T14:57:37.055Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given two sorted integer arrays <em>nums1</em> and <em>nums2</em>, merge <em>nums2</em> into <em>nums1</em> as one sorted array.</p><p><strong>Note:</strong></p><ul><li>The number of elements initialized in <em>nums1</em> and <em>nums2</em> are <em>m</em> and <em>n</em> respectively.</li><li>You may assume that <em>nums1</em> has enough space (size that is <strong>equal</strong> to <em>m</em> + <em>n</em>) to hold additional elements from <em>nums2</em>.</li></ul><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Input:</span><br><span class="line">nums1 &#x3D; [1,2,3,0,0,0], m &#x3D; 3</span><br><span class="line">nums2 &#x3D; [2,5,6],       n &#x3D; 3</span><br><span class="line"></span><br><span class="line">Output: [1,2,2,3,5,6]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>-10^9 &lt;= nums1[i], nums2[i] &lt;= 10^9</code></li><li><code>nums1.length == m + n</code></li><li><code>nums2.length == n</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given two sorted integer arrays &lt;em&gt;nums1&lt;/em&gt; and &lt;em&gt;nums2&lt;/em&gt;, merge &lt;em&gt;nums2&lt;/em&gt; into &lt;em&gt;nums1&lt;/em&gt; as one sorted ar
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Design an API to distribute red packets 🧧</title>
+    <link href="http://yoursite.com/2020/07/17/Design-an-API-to-distribute-red-packets/"/>
+    <id>http://yoursite.com/2020/07/17/Design-an-API-to-distribute-red-packets/</id>
+    <published>2020-07-17T14:19:40.000Z</published>
+    <updated>2020-07-17T14:52:59.143Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// N people , K dollars</span></span><br><span class="line"><span class="comment">// there is the answer provided by the original post but I dont't think this is fair ...</span></span><br><span class="line"><span class="keyword">let</span> redPacketDistributor = <span class="function"><span class="keyword">function</span>(<span class="params">N,K</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = [];</span><br><span class="line">  <span class="keyword">while</span>(N&gt;<span class="number">1</span>) &#123;</span><br><span class="line">    <span class="keyword">let</span> temp = <span class="built_in">Math</span>.random(K-N* <span class="number">0.01</span>)</span><br><span class="line">    res.push(temp);</span><br><span class="line">   K = K-temp;</span><br><span class="line">    N--;</span><br><span class="line">  &#125;</span><br><span class="line">  res.push(K)</span><br><span class="line">  <span class="built_in">console</span>.log(res)</span><br><span class="line">&#125;</span><br><span class="line">redPacketDistributor(<span class="number">5</span>,<span class="number">300</span>)</span><br><span class="line"><span class="comment">// [0.7083125653417155, 0.5869899806315655, 0.34446030632827296, 0.18975758504872142, 298.1704795626497]</span></span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// my own version</span></span><br><span class="line"><span class="keyword">let</span> redPacketDistributor = <span class="function"><span class="keyword">function</span>(<span class="params">N,K</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> res = [];</span><br><span class="line">  <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;N;i++) &#123;</span><br><span class="line">    res.push(<span class="built_in">Math</span>.random());</span><br><span class="line">    sum+=res[i];</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="keyword">let</span> pre = <span class="number">0</span>;</span><br><span class="line">  <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;N<span class="number">-1</span>;j++) &#123;</span><br><span class="line">    res[j] = K*res[j]/sum;</span><br><span class="line">    pre = pre + res[j];</span><br><span class="line">  &#125;</span><br><span class="line">  res[N<span class="number">-1</span>]= K-pre;</span><br><span class="line">  <span class="built_in">console</span>.log(res);</span><br><span class="line">&#125;</span><br><span class="line">redPacketDistributor(<span class="number">5</span>,<span class="number">300</span>)</span><br><span class="line"><span class="comment">// [87.14864688046515, 27.147456944003753, 124.28600248485358, 54.245655872344926, 7.172237818332576]</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 26. Remove Duplicates from Sorted Array</title>
@@ -463,57 +512,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Given a non-negative index &lt;em&gt;k&lt;/em&gt; where &lt;em&gt;k&lt;/em&gt; ≤ 33, return the &lt;em&gt;k&lt;/em&gt;th index row of the Pascal&#39;s triangle.&lt;/p&gt;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 1104. Path In Zigzag Labelled Binary Tree</title>
-    <link href="http://yoursite.com/2020/07/04/LeetCode-1104-Path-In-Zigzag-Labelled-Binary-Tree/"/>
-    <id>http://yoursite.com/2020/07/04/LeetCode-1104-Path-In-Zigzag-Labelled-Binary-Tree/</id>
-    <published>2020-07-04T01:42:25.000Z</published>
-    <updated>2020-07-04T02:10:26.002Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>In an infinite binary tree where every node has two children, the nodes are labelled in row order.</p><p>In the odd numbered rows (ie., the first, third, fifth,…), the labelling is left to right, while in the even numbered rows (second, fourth, sixth,…), the labelling is right to left.</p><p><img src="https://assets.leetcode.com/uploads/2019/06/24/tree.png" alt="img" /></p><p>Given the <code>label</code> of a node in this tree, return the labels in the path from the root of the tree to the node with that <code>label</code>.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: label &#x3D; 14</span><br><span class="line">Output: [1,3,4,14]</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: label &#x3D; 26</span><br><span class="line">Output: [1,2,6,10,26]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= label &lt;= 10^6</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">label</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> pathInZigZagTree = <span class="function"><span class="keyword">function</span>(<span class="params">label,level=<span class="number">0</span></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (<span class="number">1</span> &lt;&lt; level &lt;= label) ++level;</span><br><span class="line">    <span class="keyword">let</span> res = [level];</span><br><span class="line">    <span class="keyword">for</span>(;label&gt;=<span class="number">1</span>;label=<span class="built_in">Math</span>.floor(label/<span class="number">2</span>),--level) &#123;</span><br><span class="line">        res[level<span class="number">-1</span>]=label;</span><br><span class="line">        <span class="comment">// now label = ('real' children)/2 =&gt; the real parent</span></span><br><span class="line">        label = (<span class="number">1</span> &lt;&lt; level) - <span class="number">1</span> - label + (<span class="number">1</span> &lt;&lt; (level - <span class="number">1</span>));</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="string">'after:'</span>,label);</span><br><span class="line">        <span class="comment">//  (1 &lt;&lt; level) - 1 : the max element of a level</span></span><br><span class="line">        <span class="comment">//  (1 &lt;&lt; (level - 1)) : the min element of a level</span></span><br><span class="line">        <span class="comment">// now label is the 'real' children before reversing the level</span></span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;In an infinite binary tree where every node has two children, the nodes are labelled in row order.&lt;/p&gt;
-&lt;p&gt;In the odd numbere
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 367. Valid Perfect Square</title>
-    <link href="http://yoursite.com/2020/07/03/LeetCode-367-Valid-Perfect-Square/"/>
-    <id>http://yoursite.com/2020/07/03/LeetCode-367-Valid-Perfect-Square/</id>
-    <published>2020-07-03T11:42:40.000Z</published>
-    <updated>2020-07-03T11:55:32.173Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a <strong>positive</strong> integer <em>num</em>, write a function which returns True if <em>num</em> is a perfect square else False.</p><p><strong>Follow up:</strong> <strong>Do not</strong> use any built-in library function such as <code>sqrt</code>.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num &#x3D; 16</span><br><span class="line">Output: true</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: num &#x3D; 14</span><br><span class="line">Output: false</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= num &lt;= 2^31 - 1</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">num</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// the most common method, O(sqrt(N))</span></span><br><span class="line"><span class="keyword">var</span> isPerfectSquare = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> flag = <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">for</span>(i=<span class="number">1</span>;i*i&lt;num+<span class="number">1</span>;i++) &#123;</span><br><span class="line">        <span class="keyword">if</span>(i*i===num) &#123;</span><br><span class="line">            flag = <span class="literal">true</span>; <span class="keyword">break</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> flag;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// the math guy method , kinda cheating </span></span><br><span class="line"><span class="comment">// 1 + 3 + ... + (2*n-1) = (1+(2*n-1))*n/2 = n^2</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">num</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPerfectSquare = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> sum = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">while</span>(sum&lt;num) &#123;</span><br><span class="line">        sum += <span class="number">2</span>*i<span class="number">-1</span>;</span><br><span class="line">        i++;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> sum===num?<span class="literal">true</span>:<span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// binary search , O(log N)</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">num</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> isPerfectSquare = <span class="function"><span class="keyword">function</span>(<span class="params">num</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> left = <span class="number">1</span>,right = num;</span><br><span class="line">    <span class="keyword">while</span>(left &lt;= right) &#123;</span><br><span class="line">        <span class="keyword">let</span> mid = <span class="built_in">Math</span>.floor((left+right)/<span class="number">2</span>);</span><br><span class="line">        <span class="keyword">if</span>(mid*mid===num) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> <span class="keyword">if</span> (mid*mid&lt;num) &#123;</span><br><span class="line">            left=mid+<span class="number">1</span>;</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            right=mid<span class="number">-1</span>;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a &lt;strong&gt;positive&lt;/strong&gt; integer &lt;em&gt;num&lt;/em&gt;, write a function which returns True if &lt;em&gt;num&lt;/em&gt; is a perfect squ
       
     
     </summary>
