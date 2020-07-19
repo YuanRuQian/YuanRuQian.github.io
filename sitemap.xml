@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/19/LeetCode-29-Divide-Two-Integers/</loc>
+    
+    <lastmod>2020-07-19T00:11:22.631Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/18/LeetCode-12-Integer-to-Roman/</loc>
+    
+    <lastmod>2020-07-18T17:05:45.860Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/18/LeetCode-13-Roman-to-Integer/</loc>
     
     <lastmod>2020-07-18T14:35:23.420Z</lastmod>
