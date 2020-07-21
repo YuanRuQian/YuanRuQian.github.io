@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-20T15:46:00.274Z</updated>
+  <updated>2020-07-21T14:23:39.418Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 107. Binary Tree Level Order Traversal II</title>
+    <link href="http://yoursite.com/2020/07/21/LeetCode-107-Binary-Tree-Level-Order-Traversal-II/"/>
+    <id>http://yoursite.com/2020/07/21/LeetCode-107-Binary-Tree-Level-Order-Traversal-II/</id>
+    <published>2020-07-21T13:46:59.000Z</published>
+    <updated>2020-07-21T14:23:39.418Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a binary tree, return the <em>bottom-up level order</em> traversal of its nodes' values. (ie, from left to right, level by level from leaf to root).</p><p>For example: Given binary tree <code>[3,9,20,null,null,15,7]</code>,</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">  3</span><br><span class="line"> &#x2F; \</span><br><span class="line">9  20</span><br><span class="line">  &#x2F;  \</span><br><span class="line"> 15   7</span><br></pre></td></tr></table></figure><p>return its bottom-up level order traversal as:</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[</span><br><span class="line">  [15,7],</span><br><span class="line">  [9,20],</span><br><span class="line">  [3]</span><br><span class="line">]</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// typical BFS</span></span><br><span class="line"><span class="keyword">let</span> levelOrderBottom = <span class="function"><span class="keyword">function</span>(<span class="params">root</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(!root) <span class="keyword">return</span> [];</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> queue = [[root,<span class="number">0</span>]];</span><br><span class="line">    <span class="keyword">while</span>(queue.length&gt;<span class="number">0</span>) &#123;</span><br><span class="line">        <span class="keyword">const</span> [node,layer] = queue.shift();</span><br><span class="line">        <span class="keyword">if</span>(layer&lt;res.length) &#123;</span><br><span class="line">            res[layer].push(node.val);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            res.push([node.val]);</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="comment">// node value enqueue</span></span><br><span class="line">        <span class="keyword">if</span>(node.left) queue.push([node.left,layer+<span class="number">1</span>]);</span><br><span class="line">        <span class="keyword">if</span>(node.right) queue.push([node.right,layer+<span class="number">1</span>]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res.reverse();</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a binary tree, return the &lt;em&gt;bottom-up level order&lt;/em&gt; traversal of its nodes&#39; values. (ie, from left to right, leve
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 445. Add Two Numbers II</title>
@@ -487,32 +512,6 @@
       
         &lt;blockquote&gt;
 &lt;p&gt;Serialization is the process of converting a data structure or object into a sequence of bits so that it can be stored in a 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 45. Jump Game II</title>
-    <link href="http://yoursite.com/2020/07/09/LeetCode-45-Jump-Game-II/"/>
-    <id>http://yoursite.com/2020/07/09/LeetCode-45-Jump-Game-II/</id>
-    <published>2020-07-09T13:36:34.000Z</published>
-    <updated>2020-07-09T14:20:03.418Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given an array of non-negative integers, you are initially positioned at the first index of the array.</p><p>Each element in the array represents your maximum jump length at that position.</p><p>Your goal is to reach the last index in the minimum number of jumps.</p><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [2,3,1,1,4]</span><br><span class="line">Output: 2</span><br><span class="line">Explanation: The minimum number of jumps to reach the last index is 2.</span><br><span class="line">    Jump 1 step from index 0 to 1, then 3 steps to the last index.</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><p>You can assume that you can always reach the last index.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// greedy method</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> jump = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> newMax = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> jump = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">let</span> oldMax = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;nums.length<span class="number">-1</span>;i++) &#123;</span><br><span class="line">        newMax = <span class="built_in">Math</span>.max(newMax, i+nums[i]);</span><br><span class="line">        <span class="comment">// find the max length each point you can reach</span></span><br><span class="line">        <span class="keyword">if</span> (i === oldMax) &#123;</span><br><span class="line">            <span class="comment">// if you can reach the old limit , start from here to minimize the steps</span></span><br><span class="line">            jump++;</span><br><span class="line">            oldMax = newMax;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> jump;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given an array of non-negative integers, you are initially positioned at the first index of the array.&lt;/p&gt;
-&lt;p&gt;Each element i
       
     
     </summary>
