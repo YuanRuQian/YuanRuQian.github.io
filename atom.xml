@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-22T14:36:04.371Z</updated>
+  <updated>2020-07-23T14:51:04.548Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,59 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>64匹马，8个赛道，最少跑几次能排出前四名</title>
+    <link href="http://yoursite.com/2020/07/23/64%E5%8C%B9%E9%A9%AC%EF%BC%8C8%E4%B8%AA%E8%B5%9B%E9%81%93%EF%BC%8C%E6%9C%80%E5%B0%91%E8%B7%91%E5%87%A0%E6%AC%A1%E8%83%BD%E6%8E%92%E5%87%BA%E5%89%8D%E5%9B%9B%E5%90%8D/"/>
+    <id>http://yoursite.com/2020/07/23/64%E5%8C%B9%E9%A9%AC%EF%BC%8C8%E4%B8%AA%E8%B5%9B%E9%81%93%EF%BC%8C%E6%9C%80%E5%B0%91%E8%B7%91%E5%87%A0%E6%AC%A1%E8%83%BD%E6%8E%92%E5%87%BA%E5%89%8D%E5%9B%9B%E5%90%8D/</id>
+    <published>2020-07-23T14:23:41.000Z</published>
+    <updated>2020-07-23T14:51:04.548Z</updated>
+    
+    <content type="html"><![CDATA[<p><code>let res = 0</code></p><h3 id="第一步"><a class="markdownIt-Anchor" href="#第一步"></a> 第一步</h3><p>随机分8组</p><p>每组都跑一次</p><p><code>res += 8</code> =&gt; <code>res = 8</code></p><p>每组去掉最慢的4个 剩下 32匹</p><h3 id="第二步"><a class="markdownIt-Anchor" href="#第二步"></a> 第二步</h3><p>不能继续暴力了 因为第一次是随机的 现在已经筛过一次了</p><p>每组第一名拿出来跑一次</p><p><code>res = 9</code></p><p>去掉后4个 连带着去掉后4个所在组的所有马 剩下  32-4*4=16 匹</p><p>这时候最快的因为是所有组最快的选的最快 所以第一名就是它了 <strong>此时确定一个</strong></p><h3 id="第三步"><a class="markdownIt-Anchor" href="#第三步"></a> 第三步</h3><p>剩下的3匹最快的马</p><p>只可能是 15 匹的3匹</p><p>显然 可以继续缩小范围</p><p>第一名组 剩下3匹都可能（4匹都是第一名所在的组</p><p>第二名组 最快3匹（第一组第一名 + 第二组第一名第二名第三名</p><p>第三名组 最快2匹  （第一组第一名 + 第二组第一名 + 第三组第一第二名</p><p>第四名组 最快1匹 （四个组每组第一名</p><p>所以其实只有 3+3+2+1 = 9 匹需要考虑</p><p>此时随机抽8匹比赛</p><p>淘汰最后5匹</p><p><code>res=10</code></p><h4 id="第四步"><a class="markdownIt-Anchor" href="#第四步"></a> 第四步</h4><p>刚刚选出来的3匹和剩下的一匹比一下 选最快的三匹</p><p><code>res=11</code></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;&lt;code&gt;let res = 0&lt;/code&gt;&lt;/p&gt;
+&lt;h3 id=&quot;第一步&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第一步&quot;&gt;&lt;/a&gt; 第一步&lt;/h3&gt;
+&lt;p&gt;随机分8组&lt;/p&gt;
+&lt;p&gt;每组都跑一次&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;res 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>LeetCode 112. Path Sum</title>
+    <link href="http://yoursite.com/2020/07/23/LeetCode-112-Path-Sum/"/>
+    <id>http://yoursite.com/2020/07/23/LeetCode-112-Path-Sum/</id>
+    <published>2020-07-23T14:01:20.000Z</published>
+    <updated>2020-07-23T14:15:53.210Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p><p><strong>Note:</strong> A leaf is a node with no children.</p><p><strong>Example:</strong></p><p>Given the below binary tree and <code>sum = 22</code>,</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      5</span><br><span class="line">     &#x2F; \</span><br><span class="line">    4   8</span><br><span class="line">   &#x2F;   &#x2F; \</span><br><span class="line">  11  13  4</span><br><span class="line"> &#x2F;  \      \</span><br><span class="line">7    2      1</span><br></pre></td></tr></table></figure><p>return true, as there exist a root-to-leaf path <code>5-&gt;4-&gt;11-&gt;2</code> which sum is 22.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">sum</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> hasPathSum = <span class="function"><span class="keyword">function</span>(<span class="params">root, sum</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root &amp;&amp; sum===root.val &amp;&amp; !root.left &amp;&amp; !root.right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the pa
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 979. Distribute Coins in Binary Tree</title>
@@ -467,57 +520,6 @@
     
     
       <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 72. Edit Distance</title>
-    <link href="http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/"/>
-    <id>http://yoursite.com/2020/07/12/LeetCode-72-Edit-Distance/</id>
-    <published>2020-07-12T03:13:06.000Z</published>
-    <updated>2020-07-12T04:24:49.780Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given two words <em>word1</em> and <em>word2</em>, find the minimum number of operations required to convert <em>word1</em> to <em>word2</em>.</p><p>You have the following 3 operations permitted on a word:</p><ol type="1"><li>Insert a character</li><li>Delete a character</li><li>Replace a character</li></ol><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;horse&quot;, word2 &#x3D; &quot;ros&quot;</span><br><span class="line">Output: 3</span><br><span class="line">Explanation: </span><br><span class="line">horse -&gt; rorse (replace &#39;h&#39; with &#39;r&#39;)</span><br><span class="line">rorse -&gt; rose (remove &#39;r&#39;)</span><br><span class="line">rose -&gt; ros (remove &#39;e&#39;)</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Input: word1 &#x3D; &quot;intention&quot;, word2 &#x3D; &quot;execution&quot;</span><br><span class="line">Output: 5</span><br><span class="line">Explanation: </span><br><span class="line">intention -&gt; inention (remove &#39;t&#39;)</span><br><span class="line">inention -&gt; enention (replace &#39;i&#39; with &#39;e&#39;)</span><br><span class="line">enention -&gt; exention (replace &#39;n&#39; with &#39;x&#39;)</span><br><span class="line">exention -&gt; exection (replace &#39;n&#39; with &#39;c&#39;)</span><br><span class="line">exection -&gt; execution (insert &#39;u&#39;)</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word1</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string&#125;</span> <span class="variable">word2</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> minDistance = <span class="function"><span class="keyword">function</span>(<span class="params">word1, word2</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len1 = word1.length;</span><br><span class="line">    <span class="keyword">let</span> len2 = word2.length;</span><br><span class="line">    <span class="keyword">let</span> dp = [];</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;len1+<span class="number">1</span>;i++) &#123;</span><br><span class="line">        dp.push(<span class="built_in">Array</span>(len2+<span class="number">1</span>).fill(<span class="number">0</span>));</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len1;j++) &#123;</span><br><span class="line">        dp[j][<span class="number">0</span>]=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len2;j++) &#123;</span><br><span class="line">        dp[<span class="number">0</span>][j]=j;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">console</span>.log(dp);</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">let</span> i=<span class="number">1</span>;i&lt;=len1;i++) &#123;</span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">let</span> j=<span class="number">1</span>;j&lt;=len2;j++) &#123;</span><br><span class="line">                <span class="keyword">if</span> (word1[i<span class="number">-1</span>]===word2[j<span class="number">-1</span>]) &#123;</span><br><span class="line">                    dp[i][j]=dp[i<span class="number">-1</span>][j<span class="number">-1</span>];</span><br><span class="line">                &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">                    dp[i][j]=<span class="built_in">Math</span>.min(dp[i<span class="number">-1</span>][j<span class="number">-1</span>],<span class="built_in">Math</span>.min(dp[i<span class="number">-1</span>][j],dp[i][j<span class="number">-1</span>]))+<span class="number">1</span>;</span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i-1][j-1]+1 replace word1[i-1] with word2[j-1]</span></span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i-1][j]+1 delete word1[i-1] </span></span><br><span class="line">                    <span class="comment">// dp[i][j]=dp[i][j-1]+1 insert word2[j]</span></span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> dp[len1][len2];</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given two words &lt;em&gt;word1&lt;/em&gt; and &lt;em&gt;word2&lt;/em&gt;, find the minimum number of operations required to convert &lt;em&gt;word1&lt;/em&gt; 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>My first week of intern experience</title>
-    <link href="http://yoursite.com/2020/07/12/My-first-week-of-intern-experience/"/>
-    <id>http://yoursite.com/2020/07/12/My-first-week-of-intern-experience/</id>
-    <published>2020-07-12T00:51:18.000Z</published>
-    <updated>2020-07-12T01:04:28.036Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>From this July, I work as a application dev intern at a insurance tech company.</p><p>80% of my work will in be in React / Uni-app, the rest will be some node.js job.</p><p>Currently I work in the R&amp;D department, doing some simple bug-fixing job and add some features to the existing UI components library.</p></blockquote><h3 id="something-i-wish-i-could-prepare-before-the-internship">Something I wish I could prepare before the internship</h3><h5 id="get-familiar-with-dev-tools">Get familiar with dev tools</h5><ul><li><p>Chrome Dev tools</p><p>Local storage / session storage / check element / change DOM on the fly ....</p><p>You can never be too familiar with Chrome dev tools !!!</p></li><li><p>Your IDE shortcuts</p><p>Before the job I was using JetBrains products ( WebStorm etc.)</p><p>Yet at work we use VSCode</p><p>So be sure to get your hands on the IDE at your workplace to make a smooth transition !</p><p>Also, definitely review how to add debugger / breakpoints ! They will be lifesaver if you are fixing a complex bug.</p></li></ul><h5 id="get-to-know-some-version-control-devops-server-ci-cd-process">Get to know some Version control / DevOps / server / CI / CD process</h5><ul><li><p>Git</p><p>Please try to review some Git teamwork knowledge on <a href="https://learngitbranching.js.org/?locale=en_US" target="_blank" rel="noopener">this free website</a></p><p>At least review the part of <code>rebase</code> and <code>merge</code></p></li></ul>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;From this July, I work as a application dev intern at a insurance tech company.&lt;/p&gt;
-&lt;p&gt;80% of my work will in be in React / 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Work" scheme="http://yoursite.com/tags/Work/"/>
     
   </entry>
   

@@ -1,0 +1,46 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="X-UA-Compatible" content="IE=edge"><title>64匹马，8个赛道，最少跑几次能排出前四名 · Lydia Yuan's Blog</title><meta name="description" content="64匹马，8个赛道，最少跑几次能排出前四名 - Lydia Yuan"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="/favicon.ico"><link rel="stylesheet" href="/css/gandalfr.css"><link rel="stylesheet" href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/styles/idea.min.css"><link rel="search" type="application/opensearchdescription+xml" href="http://yoursite.com/atom.xml" title="Lydia Yuan's Blog"><meta name="generator" content="Hexo 4.2.0"><link rel="alternate" href="/atom.xml" title="Lydia Yuan's Blog" type="application/atom+xml">
+<!-- hexo-inject:begin --><!-- hexo-inject:end --></head><body><div class="wrap"><header><a href="/" class="logo-link"><img src="/logo.png" alt="logo"></a><ul class="nav nav-list"><li class="nav-list-item"><a href="/" target="_self" class="nav-list-link">BLOG</a></li><li class="nav-list-item"><a href="/archives/" target="_self" class="nav-list-link">ARCHIVE</a></li><li class="nav-list-item"><a href="https://github.com/YuanRuQian" target="_blank" class="nav-list-link">GITHUB</a></li><li class="nav-list-item"><a href="mailto:lydiayuan99@gmail.com" target="_self" class="nav-list-link">E-MAIL</a></li><li class="nav-list-item"><a href="/atom.xml" target="_self" class="nav-list-link">RSS</a></li></ul></header><main class="container"><div class="post"><article class="post-block"><h1 class="post-title">64匹马，8个赛道，最少跑几次能排出前四名</h1><div class="tags"><a href="/tags/Interview/" class="tag-title">#Interview</a></div><div class="post-info">Jul 23, 2020</div><div class="post-content"><p><code>let res = 0</code></p>
+<!-- hexo-inject:begin --><!-- hexo-inject:end --><h3 id="第一步"><a class="markdownIt-Anchor" href="#第一步"></a> 第一步</h3>
+<p>随机分8组</p>
+<p>每组都跑一次</p>
+<p><code>res += 8</code> =&gt; <code>res = 8</code></p>
+<p>每组去掉最慢的4个 剩下 32匹</p>
+<h3 id="第二步"><a class="markdownIt-Anchor" href="#第二步"></a> 第二步</h3>
+<p>不能继续暴力了 因为第一次是随机的 现在已经筛过一次了</p>
+<p>每组第一名拿出来跑一次</p>
+<p><code>res = 9</code></p>
+<p>去掉后4个 连带着去掉后4个所在组的所有马 剩下  32-4*4=16 匹</p>
+<p>这时候最快的因为是所有组最快的选的最快 所以第一名就是它了 <strong>此时确定一个</strong></p>
+<h3 id="第三步"><a class="markdownIt-Anchor" href="#第三步"></a> 第三步</h3>
+<p>剩下的3匹最快的马</p>
+<p>只可能是 15 匹的3匹</p>
+<p>显然 可以继续缩小范围</p>
+<p>第一名组 剩下3匹都可能（4匹都是第一名所在的组</p>
+<p>第二名组 最快3匹（第一组第一名 + 第二组第一名第二名第三名</p>
+<p>第三名组 最快2匹  （第一组第一名 + 第二组第一名 + 第三组第一第二名</p>
+<p>第四名组 最快1匹 （四个组每组第一名</p>
+<p>所以其实只有 3+3+2+1 = 9 匹需要考虑</p>
+<p>此时随机抽8匹比赛</p>
+<p>淘汰最后5匹</p>
+<p><code>res=10</code></p>
+<h4 id="第四步"><a class="markdownIt-Anchor" href="#第四步"></a> 第四步</h4>
+<p>刚刚选出来的3匹和剩下的一匹比一下 选最快的三匹</p>
+<p><code>res=11</code></p>
+</div></article></div></main><footer><div class="paginator"><a href="/2020/07/23/LeetCode-112-Path-Sum/" class="next">NEXT</a></div><div class="copyright"><p>© 2020 <a href="http://yoursite.com">Lydia Yuan</a>, powered by <a href="https://hexo.io/" target="_blank">Hexo</a> and <a href="https://github.com/MikeCoder/hexo-theme-gandalfr" target="_blank">hexo-theme-gandalfr</a>.</p></div></footer></div><script src="//cdn.bootcss.com/mathjax/2.7.0/MathJax.js?config=TeX-MML-AM_CHTML" integrity="sha384-crwIf/BuaWM9rM65iM+dWFldgQ1Un8jWZMuh3puxb8TOY9+linwLoI7ZHZT+aekW" crossorigin="anonymous"></script><script src="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.13.1/highlight.min.js" crossorigin="anonymous"></script><script src="//cdn.bootcss.com/jquery/3.1.1/jquery.js" crossorigin="anonymous"></script><script>(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;e=o.createElement(i);r=o.getElementsByTagName(i)[0];e.src='//www.google-analytics.com/analytics.js';r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));ga('create',"UA-164777506-1",'auto');ga('send','pageview');</script><script>$(document).ready(function() { hljs.configure({useBR: true}); $('pre').each(function(i, block) { hljs.highlightBlock(block); }); });</script><!-- hexo-inject:begin --><!-- Begin: Injected MathJax -->
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config("");
+</script>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Queue(function() {
+    var all = MathJax.Hub.getAllJax(), i;
+    for(i=0; i < all.length; i += 1) {
+      all[i].SourceElement().parentNode.className += ' has-jax';
+    }
+  });
+</script>
+
+<script type="text/javascript" src="custom_mathjax_source">
+</script>
+<!-- End: Injected MathJax -->
+<!-- hexo-inject:end --></body></html>
