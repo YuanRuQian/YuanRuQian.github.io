@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/24/LeetCode-113-Path-Sum-II/</loc>
+    
+    <lastmod>2020-07-24T15:02:53.117Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/07/24/LeetCode-832-Flipping-an-Image/</loc>
+    
+    <lastmod>2020-07-24T14:23:24.754Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/23/LeetCode-559-Maximum-Depth-of-N-ary-Tree/</loc>
     
     <lastmod>2020-07-23T15:46:05.428Z</lastmod>
