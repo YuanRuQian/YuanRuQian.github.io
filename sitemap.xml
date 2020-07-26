@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/07/26/LeetCode-1314-Matrix-Block-Sum/</loc>
+    
+    <lastmod>2020-07-26T02:13:46.176Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/07/25/LeetCode-861-Score-After-Flipping-Matrix/</loc>
     
     <lastmod>2020-07-25T15:34:55.174Z</lastmod>
