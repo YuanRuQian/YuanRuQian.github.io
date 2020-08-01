@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-07-31T14:58:04.113Z</updated>
+  <updated>2020-08-01T01:58:15.787Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>LeetCode 208. Implement Trie (Prefix Tree)</title>
+    <link href="http://yoursite.com/2020/08/01/LeetCode-720-Longest-Word-in-Dictionary/"/>
+    <id>http://yoursite.com/2020/08/01/LeetCode-720-Longest-Word-in-Dictionary/</id>
+    <published>2020-08-01T01:05:40.000Z</published>
+    <updated>2020-08-01T01:58:15.787Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>Implement a trie with <code>insert</code>, <code>search</code>, and <code>startsWith</code> methods.</p><p><strong>Example:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Trie trie &#x3D; new Trie();</span><br><span class="line"></span><br><span class="line">trie.insert(&quot;apple&quot;);</span><br><span class="line">trie.search(&quot;apple&quot;);   &#x2F;&#x2F; returns true</span><br><span class="line">trie.search(&quot;app&quot;);     &#x2F;&#x2F; returns false</span><br><span class="line">trie.startsWith(&quot;app&quot;); &#x2F;&#x2F; returns true</span><br><span class="line">trie.insert(&quot;app&quot;);   </span><br><span class="line">trie.search(&quot;app&quot;);     &#x2F;&#x2F; returns true</span><br></pre></td></tr></table></figure><p><strong>Note:</strong></p><ul><li>You may assume that all inputs are consist of lowercase letters <code>a-z</code>.</li><li>All inputs are guaranteed to be non-empty strings.</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;string[]&#125;</span> <span class="variable">words</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;string&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> longestWord = <span class="function"><span class="keyword">function</span>(<span class="params">words</span>) </span>&#123;</span><br><span class="line">    words.sort();</span><br><span class="line">  <span class="comment">// [ 'w', 'wo', 'wor', 'worl', 'world' ]</span></span><br><span class="line">    <span class="keyword">let</span> <span class="keyword">set</span> = new Set(words);</span><br><span class="line">    let res = '';</span><br><span class="line">    for(let w of words) &#123;</span><br><span class="line">        <span class="keyword">let</span> valid = <span class="literal">true</span>;</span><br><span class="line">        <span class="keyword">let</span> key = <span class="string">''</span>;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;w.length;i++) &#123;</span><br><span class="line">            key += w[i];</span><br><span class="line">            <span class="keyword">if</span>(!<span class="keyword">set</span>.has(key)) &#123;</span><br><span class="line">                valid = <span class="literal">false</span>;</span><br><span class="line">                <span class="keyword">break</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span> (valid &amp;&amp; w.length &gt; res.length) &#123;</span><br><span class="line">            res = w</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;Implement a trie with &lt;code&gt;insert&lt;/code&gt;, &lt;code&gt;search&lt;/code&gt;, and &lt;code&gt;startsWith&lt;/code&gt; methods.&lt;/p&gt;
+&lt;p&gt;&lt;strong&gt;Example:
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>ZJ27 字典序</title>
@@ -494,31 +520,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given a binary tree containing digits from &lt;code&gt;0-9&lt;/code&gt; only, each root-to-leaf path could represent a number.&lt;/p&gt;
 &lt;p&gt;An
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 1424. Diagonal Traverse II</title>
-    <link href="http://yoursite.com/2020/07/19/LeetCode-1424-Diagonal-Traverse-II/"/>
-    <id>http://yoursite.com/2020/07/19/LeetCode-1424-Diagonal-Traverse-II/</id>
-    <published>2020-07-19T01:45:26.000Z</published>
-    <updated>2020-07-19T01:46:26.463Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a list of lists of integers, <code>nums</code>, return all elements of <code>nums</code> in diagonal order as shown in the below images.</p><p><strong>Example 1:</strong></p><p><strong><img src="https://assets.leetcode.com/uploads/2020/04/08/sample_1_1784.png" alt="img" /></strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [[1,2,3],[4,5,6],[7,8,9]]</span><br><span class="line">Output: [1,4,2,7,5,3,8,6,9]</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><p><strong><img src="https://assets.leetcode.com/uploads/2020/04/08/sample_2_1784.png" alt="img" /></strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [[1,2,3,4,5],[6,7],[8],[9,10,11],[12,13,14,15,16]]</span><br><span class="line">Output: [1,6,2,8,7,3,9,4,12,10,5,13,11,14,15,16]</span><br></pre></td></tr></table></figure><p><strong>Example 3:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [[1,2,3],[4],[5,6,7],[8],[9,10,11]]</span><br><span class="line">Output: [1,4,2,5,3,8,6,9,7,10,11]</span><br></pre></td></tr></table></figure><p><strong>Example 4:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Input: nums &#x3D; [[1,2,3,4,5,6]]</span><br><span class="line">Output: [1,2,3,4,5,6]</span><br></pre></td></tr></table></figure><p><strong>Constraints:</strong></p><ul><li><code>1 &lt;= nums.length &lt;= 10^5</code></li><li><code>1 &lt;= nums[i].length &lt;= 10^5</code></li><li><code>1 &lt;= nums[i][j] &lt;= 10^9</code></li><li>There at most <code>10^5</code> elements in <code>nums</code>.</li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">nums</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> findDiagonalOrder = <span class="function"><span class="keyword">function</span>(<span class="params">nums</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> maxRow = nums.length;</span><br><span class="line">    <span class="keyword">let</span> maxCol = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> row <span class="keyword">of</span> nums) &#123;</span><br><span class="line">        maxCol = <span class="built_in">Math</span>.max(maxCol,row.length);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> res = [];</span><br><span class="line">    <span class="keyword">let</span> tempSum = maxRow+maxCol;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> t=<span class="number">0</span>;t&lt;maxRow;t++) &#123;</span><br><span class="line">        <span class="comment">// from bottom to the upper side</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=t,j=<span class="number">0</span>;i&gt;=<span class="number">0</span> &amp;&amp; i&lt;maxRow &amp;&amp; j&lt;maxCol;i--,j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(j&lt;nums[i].length) res.push(nums[i][j])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> t=maxRow;t&lt;tempSum;t++) &#123;</span><br><span class="line">        <span class="comment">// from left to right</span></span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> i=maxRow<span class="number">-1</span>,j=t-i;i&gt;=<span class="number">0</span> &amp;&amp; i&lt;maxRow &amp;&amp; j&lt;maxCol;i--,j++) &#123;</span><br><span class="line">            <span class="keyword">if</span>(j&lt;nums[i].length) res.push(nums[i][j])</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a list of lists of integers, &lt;code&gt;nums&lt;/code&gt;, return all elements of &lt;code&gt;nums&lt;/code&gt; in diagonal order as shown in
       
     
     </summary>
