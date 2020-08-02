@@ -2,6 +2,20 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/08/02/LeetCode-729-My-Calendar-I/</loc>
+    
+    <lastmod>2020-08-02T04:49:01.341Z</lastmod>
+    
+  </url>
+  
+  <url>
+    <loc>http://yoursite.com/2020/08/02/LeetCode-732-My-Calendar-III/</loc>
+    
+    <lastmod>2020-08-02T04:41:37.900Z</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/08/01/LeetCode-720-Longest-Word-in-Dictionary/</loc>
     
     <lastmod>2020-08-01T01:58:15.787Z</lastmod>
