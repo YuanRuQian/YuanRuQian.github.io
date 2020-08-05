@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-04T15:44:45.120Z</updated>
+  <updated>2020-08-05T15:45:06.457Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>QQ8 数字转换机</title>
+    <link href="http://yoursite.com/2020/08/05/QQ8-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E6%9C%BA/"/>
+    <id>http://yoursite.com/2020/08/05/QQ8-%E6%95%B0%E5%AD%97%E8%BD%AC%E6%8D%A2%E6%9C%BA/</id>
+    <published>2020-08-05T15:21:18.000Z</published>
+    <updated>2020-08-05T15:45:06.457Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>小Q从牛博士那里获得了一个数字转换机，这台数字转换机必须同时输入两个正数a和b，并且这台数字转换机有一个红色的按钮和一个蓝色的按钮：</p><p>当按下了红色按钮，两个数字同时加1。</p><p>当按下了蓝色按钮，两个数字同时乘2。</p><p>小Q现在手中有四个整数a，b，A，B，他希望将输入的两个整数a和b变成A，B（a对应A，b对应B）。因为牛博士允许小Q使用数字转换机的时间有限，所以小Q希望按动按钮的次数越少越好。请你帮帮小Q吧。</p><h2 id="输入描述">输入描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输入包括一行，一行中有四个正整数a，b，A，B，（1≤a，b，A，B≤10^9）。</span><br></pre></td></tr></table></figure><h2 id="输出描述">输出描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">如果小Q可以完成转换，输出最少需要按动按钮的次数，否则输出-1。</span><br></pre></td></tr></table></figure><p>示例1</p><h2 id="输入">输入</h2><p><a href="javascript:void(0);">复制</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">100 1000 202 2002</span><br></pre></td></tr></table></figure><h2 id="输出">输出</h2><p><a href="javascript:void(0);">复制</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">2</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr = readline().split(<span class="string">' '</span>).map( <span class="function"><span class="params">e</span> =&gt;</span> <span class="built_in">parseInt</span>(e));</span><br><span class="line"><span class="keyword">let</span> a = arr[<span class="number">0</span>], b = arr[<span class="number">1</span>], A = arr[<span class="number">2</span>], B = arr[<span class="number">3</span>];</span><br><span class="line"><span class="keyword">let</span> res = <span class="number">0</span>;</span><br><span class="line"><span class="keyword">while</span>(A&gt;a &amp;&amp; B&gt;b) &#123;</span><br><span class="line">    <span class="keyword">if</span>( (A&amp;<span class="number">1</span>+B&amp;<span class="number">1</span>)===<span class="number">0</span> &amp;&amp; A/<span class="number">2</span>&gt;=a &amp;&amp; B/<span class="number">2</span>&gt;=b ) &#123;</span><br><span class="line">        A = A/<span class="number">2</span>;</span><br><span class="line">        B = B/<span class="number">2</span>;</span><br><span class="line">        res++;</span><br><span class="line">        <span class="comment">// 乘法变化肯定比加1大 首选乘法 典型贪心</span></span><br><span class="line">    &#125; </span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(A&gt;a &amp;&amp; B&gt;b)&#123;</span><br><span class="line">       A--;</span><br><span class="line">       B--;</span><br><span class="line">       res++;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log((A===a &amp;&amp; B===b) ? res : <span class="number">-1</span>);</span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;小Q从牛博士那里获得了一个数字转换机，这台数字转换机必须同时输入两个正数a和b，并且这台数字转换机有一个红色的按钮和一个蓝色的按钮：&lt;/p&gt;
+&lt;p&gt;当按下了红色按钮，两个数字同时加1。&lt;/p&gt;
+&lt;p&gt;当按下了蓝色按钮，两个数字同时乘2。&lt;/p&gt;
+&lt;
+      
+    
+    </summary>
+    
+    
+    
+      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
+    
+  </entry>
   
   <entry>
     <title>LeetCode 213. House Robber II</title>
@@ -504,31 +532,6 @@
     
     
       <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 112. Path Sum</title>
-    <link href="http://yoursite.com/2020/07/23/LeetCode-112-Path-Sum/"/>
-    <id>http://yoursite.com/2020/07/23/LeetCode-112-Path-Sum/</id>
-    <published>2020-07-23T14:01:20.000Z</published>
-    <updated>2020-07-23T14:15:53.210Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the path equals the given sum.</p><p><strong>Note:</strong> A leaf is a node with no children.</p><p><strong>Example:</strong></p><p>Given the below binary tree and <code>sum = 22</code>,</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">      5</span><br><span class="line">     &#x2F; \</span><br><span class="line">    4   8</span><br><span class="line">   &#x2F;   &#x2F; \</span><br><span class="line">  11  13  4</span><br><span class="line"> &#x2F;  \      \</span><br><span class="line">7    2      1</span><br></pre></td></tr></table></figure><p>return true, as there exist a root-to-leaf path <code>5-&gt;4-&gt;11-&gt;2</code> which sum is 22.</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Definition for a binary tree node.</span></span><br><span class="line"><span class="comment"> * function TreeNode(val, left, right) &#123;</span></span><br><span class="line"><span class="comment"> *     this.val = (val===undefined ? 0 : val)</span></span><br><span class="line"><span class="comment"> *     this.left = (left===undefined ? null : left)</span></span><br><span class="line"><span class="comment"> *     this.right = (right===undefined ? null : right)</span></span><br><span class="line"><span class="comment"> * &#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;TreeNode&#125;</span> <span class="variable">root</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number&#125;</span> <span class="variable">sum</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;boolean&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">let</span> hasPathSum = <span class="function"><span class="keyword">function</span>(<span class="params">root, sum</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">if</span>(root &amp;&amp; sum===root.val &amp;&amp; !root.left &amp;&amp; !root.right) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    <span class="keyword">if</span>(!root) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">    <span class="keyword">return</span> hasPathSum(root.left,sum-root.val) || hasPathSum(root.right,sum-root.val);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a binary tree and a sum, determine if the tree has a root-to-leaf path such that adding up all the values along the pa
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
     
   </entry>
   
