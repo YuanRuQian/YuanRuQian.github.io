@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-05T15:45:06.457Z</updated>
+  <updated>2020-08-08T06:55:01.890Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现一个简单的红绿灯</title>
+    <link href="http://yoursite.com/2020/08/08/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%A2%E7%BB%BF%E7%81%AF/"/>
+    <id>http://yoursite.com/2020/08/08/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%A2%E7%BB%BF%E7%81%AF/</id>
+    <published>2020-08-08T05:23:49.000Z</published>
+    <updated>2020-08-08T06:55:01.890Z</updated>
+    
+    <content type="html"><![CDATA[<blockquote><p>打印red，停1s,打印yellow,停2s,打印green,停4s</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">duration</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">setTimeout(resolve, duration);</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params">color, duration</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'traffic-light '</span>, color);</span><br><span class="line"><span class="keyword">await</span> sleep(duration);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (i++<span class="xml"><span class="tag">&lt;<span class="name">5)</span> &#123;</span></span></span><br><span class="line"><span class="xml">await changeColor('red', 1000);</span></span><br><span class="line"><span class="xml">await changeColor('yellow', 2000);</span></span><br><span class="line"><span class="xml">await changeColor('green', 4000);</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">show()</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;blockquote&gt;
+&lt;p&gt;打印red，停1s,打印yellow,停2s,打印green,停4s&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>QQ8 数字转换机</title>
@@ -504,34 +531,6 @@
     
     
       <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>64匹马，8个赛道，最少跑几次能排出前四名</title>
-    <link href="http://yoursite.com/2020/07/23/64%E5%8C%B9%E9%A9%AC%EF%BC%8C8%E4%B8%AA%E8%B5%9B%E9%81%93%EF%BC%8C%E6%9C%80%E5%B0%91%E8%B7%91%E5%87%A0%E6%AC%A1%E8%83%BD%E6%8E%92%E5%87%BA%E5%89%8D%E5%9B%9B%E5%90%8D/"/>
-    <id>http://yoursite.com/2020/07/23/64%E5%8C%B9%E9%A9%AC%EF%BC%8C8%E4%B8%AA%E8%B5%9B%E9%81%93%EF%BC%8C%E6%9C%80%E5%B0%91%E8%B7%91%E5%87%A0%E6%AC%A1%E8%83%BD%E6%8E%92%E5%87%BA%E5%89%8D%E5%9B%9B%E5%90%8D/</id>
-    <published>2020-07-23T14:23:41.000Z</published>
-    <updated>2020-07-23T14:51:04.548Z</updated>
-    
-    <content type="html"><![CDATA[<p><code>let res = 0</code></p><h3 id="第一步"><a class="markdownIt-Anchor" href="#第一步"></a> 第一步</h3><p>随机分8组</p><p>每组都跑一次</p><p><code>res += 8</code> =&gt; <code>res = 8</code></p><p>每组去掉最慢的4个 剩下 32匹</p><h3 id="第二步"><a class="markdownIt-Anchor" href="#第二步"></a> 第二步</h3><p>不能继续暴力了 因为第一次是随机的 现在已经筛过一次了</p><p>每组第一名拿出来跑一次</p><p><code>res = 9</code></p><p>去掉后4个 连带着去掉后4个所在组的所有马 剩下  32-4*4=16 匹</p><p>这时候最快的因为是所有组最快的选的最快 所以第一名就是它了 <strong>此时确定一个</strong></p><h3 id="第三步"><a class="markdownIt-Anchor" href="#第三步"></a> 第三步</h3><p>剩下的3匹最快的马</p><p>只可能是 15 匹的3匹</p><p>显然 可以继续缩小范围</p><p>第一名组 剩下3匹都可能（4匹都是第一名所在的组</p><p>第二名组 最快3匹（第一组第一名 + 第二组第一名第二名第三名</p><p>第三名组 最快2匹  （第一组第一名 + 第二组第一名 + 第三组第一第二名</p><p>第四名组 最快1匹 （四个组每组第一名</p><p>所以其实只有 3+3+2+1 = 9 匹需要考虑</p><p>此时随机抽8匹比赛</p><p>淘汰最后5匹</p><p><code>res=10</code></p><h4 id="第四步"><a class="markdownIt-Anchor" href="#第四步"></a> 第四步</h4><p>刚刚选出来的3匹和剩下的一匹比一下 选最快的三匹</p><p><code>res=11</code></p>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;p&gt;&lt;code&gt;let res = 0&lt;/code&gt;&lt;/p&gt;
-&lt;h3 id=&quot;第一步&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#第一步&quot;&gt;&lt;/a&gt; 第一步&lt;/h3&gt;
-&lt;p&gt;随机分8组&lt;/p&gt;
-&lt;p&gt;每组都跑一次&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;res 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="Interview" scheme="http://yoursite.com/tags/Interview/"/>
     
   </entry>
   
