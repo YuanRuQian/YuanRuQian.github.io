@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-08T07:15:01.597Z</updated>
+  <updated>2020-08-16T03:01:22.611Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>JS 词法作用域</title>
+    <link href="http://yoursite.com/2020/08/16/JS-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/"/>
+    <id>http://yoursite.com/2020/08/16/JS-%E8%AF%8D%E6%B3%95%E4%BD%9C%E7%94%A8%E5%9F%9F/</id>
+    <published>2020-08-16T02:56:05.000Z</published>
+    <updated>2020-08-16T03:01:22.611Z</updated>
+    
+    <content type="html"><![CDATA[<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> value = <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">foo</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'foo:'</span>,value,<span class="keyword">this</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">bar</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> value = <span class="number">2</span>;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'bar:'</span>,value,<span class="keyword">this</span>);</span><br><span class="line">    foo();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">bar();</span><br></pre></td></tr></table></figure><p>运行结果：</p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">bar: 2 Window &#123;parent: Window, opener: null, top: Window, length: 0, frames: Window, …&#125;</span><br><span class="line">foo: 1 Window &#123;parent: Window, opener: null, top: Window, length: 0, frames: Window, …&#125;</span><br></pre></td></tr></table></figure><p>执行 foo 函数会先从 foo 函数内部查找是否有局部变量 value</p><p>如果没有就查找上面一层的代码 全局 window 也就是 value 等于 1</p><p>bar 函数 内部 有 value = 2 所以执行 bar 会输出 2</p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span 
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>公平洗牌算法</title>
@@ -500,31 +524,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given a binary tree and a sum, find all root-to-leaf paths where each path’s sum equals the given sum.&lt;/p&gt;
 &lt;p&gt;&lt;strong&gt;Note:&lt;
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>LeetCode 832. Flipping an Image</title>
-    <link href="http://yoursite.com/2020/07/24/LeetCode-832-Flipping-an-Image/"/>
-    <id>http://yoursite.com/2020/07/24/LeetCode-832-Flipping-an-Image/</id>
-    <published>2020-07-24T14:22:25.000Z</published>
-    <updated>2020-07-24T14:23:24.754Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>Given a binary matrix <code>A</code>, we want to flip the image horizontally, then invert it, and return the resulting image.</p><p>To flip an image horizontally means that each row of the image is reversed. For example, flipping <code>[1, 1, 0]</code> horizontally results in <code>[0, 1, 1]</code>.</p><p>To invert an image means that each <code>0</code> is replaced by <code>1</code>, and each <code>1</code> is replaced by <code>0</code>. For example, inverting <code>[0, 1, 1]</code> results in <code>[1, 0, 0]</code>.</p><p><strong>Example 1:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,1,0],[1,0,1],[0,0,0]]</span><br><span class="line">Output: [[1,0,0],[0,1,0],[1,1,1]]</span><br><span class="line">Explanation: First reverse each row: [[0,1,1],[1,0,1],[0,0,0]].</span><br><span class="line">Then, invert the image: [[1,0,0],[0,1,0],[1,1,1]]</span><br></pre></td></tr></table></figure><p><strong>Example 2:</strong></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Input: [[1,1,0,0],[1,0,0,1],[0,1,1,1],[1,0,1,0]]</span><br><span class="line">Output: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</span><br><span class="line">Explanation: First reverse each row: [[0,0,1,1],[1,0,0,1],[1,1,1,0],[0,1,0,1]].</span><br><span class="line">Then invert the image: [[1,1,0,0],[0,1,1,0],[0,0,0,1],[1,0,1,0]]</span><br></pre></td></tr></table></figure><p><strong>Notes:</strong></p><ul><li><code>1 &lt;= A.length = A[0].length &lt;= 20</code></li><li><code>0 &lt;= A[i][j] &lt;= 1</code></li></ul></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * <span class="doctag">@param <span class="type">&#123;number[][]&#125;</span> <span class="variable">A</span></span></span></span><br><span class="line"><span class="comment"> * <span class="doctag">@return <span class="type">&#123;number[][]&#125;</span></span></span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">var</span> flipAndInvertImage = <span class="function"><span class="keyword">function</span>(<span class="params">A</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">let</span> len = A[<span class="number">0</span>].length;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>;i&lt;A.length;i++) &#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">let</span> j=<span class="number">0</span>;j&lt;<span class="built_in">Math</span>.floor((len+<span class="number">1</span>)/<span class="number">2</span>);j++) &#123;</span><br><span class="line">          <span class="comment">// +1 =&gt; consider even / odd number situation</span></span><br><span class="line">             [ A[i][j], A[i][len-j<span class="number">-1</span>] ] = [ <span class="built_in">Math</span>.abs(<span class="number">1</span>-A[i][len-j<span class="number">-1</span>]), <span class="built_in">Math</span>.abs(<span class="number">1</span>-A[i][j]) ];</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> A;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;Given a binary matrix &lt;code&gt;A&lt;/code&gt;, we want to flip the image horizontally, then invert it, and return the resulting image
       
     
     </summary>
