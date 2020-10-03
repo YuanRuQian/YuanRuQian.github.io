@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-29T15:14:37.163Z</updated>
+  <updated>2020-10-03T01:23:49.698Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>实现深拷贝</title>
+    <link href="http://yoursite.com/2020/10/03/%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/"/>
+    <id>http://yoursite.com/2020/10/03/%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</id>
+    <published>2020-10-03T00:58:03.000Z</published>
+    <updated>2020-10-03T01:23:49.698Z</updated>
+    
+    <content type="html"><![CDATA[<p>深拷贝的实现也是笔试很常见的题目叻</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function">(<span class="params">target</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> target !== <span class="string">&#x27;object&#x27;</span> || target === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">let</span> clone = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">        clone[key] = deepClone(target[key]);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>这个时候先不考虑循环引用的问题<br />先来测试下</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">    b: &#123;</span><br><span class="line">        c: <span class="number">2</span>,</span><br><span class="line">        d: &#123;</span><br><span class="line">            e:<span class="number">3</span></span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(deepClone(test));</span><br><span class="line"><span class="comment">// &#123;a: 1, b: &#123;…&#125;&#125; ok 的！！！</span></span><br></pre></td></tr></table></figure><p>接下来该考虑 循环引用的问题<br />比如</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">&#125;</span><br><span class="line">test.b = test;</span><br><span class="line"><span class="built_in">console</span>.log(test);</span><br></pre></td></tr></table></figure><p>直接用上面的 <code>deepClone</code> 会爆栈……<br />提示 <code>Uncaught RangeError: Maximum call stack size exceeded</code><br />那么自然是需要一个暂时的储存去储存已经复制的 key-value<br />来看看新的 key 是否在这个 key-value 集合中出现过</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deepClone = <span class="function">(<span class="params">target, map = <span class="keyword">new</span> <span class="built_in">WeakMap</span>()</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(<span class="keyword">typeof</span> target !== <span class="string">&#x27;object&#x27;</span> || target === <span class="literal">null</span>) &#123;</span><br><span class="line">        <span class="keyword">return</span> target;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">if</span>(map.get(target)) <span class="keyword">return</span> map.get(target);</span><br><span class="line">    <span class="keyword">let</span> clone = <span class="built_in">Array</span>.isArray(target) ? [] : &#123;&#125;;</span><br><span class="line">    map.set(target,clone);</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">let</span> key <span class="keyword">in</span> target) &#123;</span><br><span class="line">        clone[key] = deepClone(target[key],map);</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> clone;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>再来测试下</p><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> test = &#123;</span><br><span class="line">    a: <span class="number">1</span>,</span><br><span class="line">&#125;</span><br><span class="line">test.b = test;</span><br><span class="line"><span class="built_in">console</span>.log(deepClone(test));</span><br><span class="line"><span class="comment">// &#123;a: 1, b: &#123;…&#125;&#125; 正常叻！！！</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;深拷贝的实现也是笔试很常见的题目叻&lt;/p&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>一道笔试题：JS模版字符串替换</title>
@@ -498,33 +523,6 @@
         &lt;blockquote&gt;
 &lt;p&gt;Given a &lt;code&gt;m * n&lt;/code&gt; matrix of ones and zeros, return how many &lt;strong&gt;square&lt;/strong&gt; submatrices have all ones.&lt;/p&gt;
 
-      
-    
-    </summary>
-    
-    
-    
-      <category term="LeetCode" scheme="http://yoursite.com/tags/LeetCode/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>KS19 最小代价爬楼梯</title>
-    <link href="http://yoursite.com/2020/07/30/KS19-%E6%9C%80%E5%B0%8F%E4%BB%A3%E4%BB%B7%E7%88%AC%E6%A5%BC%E6%A2%AF/"/>
-    <id>http://yoursite.com/2020/07/30/KS19-%E6%9C%80%E5%B0%8F%E4%BB%A3%E4%BB%B7%E7%88%AC%E6%A5%BC%E6%A2%AF/</id>
-    <published>2020-07-29T16:13:11.000Z</published>
-    <updated>2020-07-29T16:13:50.975Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><h2 id="题目描述">题目描述</h2><p>你需要爬上一个N层的楼梯，在爬楼梯过程中， 每阶楼梯需花费非负代价，第i阶楼梯花费代价表示为cost[i]， 一旦你付出了代价，你可以在该阶基础上往上爬一阶或两阶。</p><p>你可以从第 0 阶或者 第 1 阶开始，请找到到达顶层的最小的代价是多少。</p><p>N和cost[i]皆为整数，且N∈[2,1000]，cost[i]∈ [0, 999]。</p><h2 id="输入描述">输入描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">输入为一串半角逗号分割的整数，对应cost数组，例如</span><br><span class="line"></span><br><span class="line">10,15,20</span><br></pre></td></tr></table></figure><h2 id="输出描述">输出描述:</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">输出一个整数，表示花费的最小代价</span><br></pre></td></tr></table></figure><p>示例1</p><h2 id="输入">输入</h2><p><a href="javascript:void(0);">复制</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">1,100,1,1,1,100,1,1,100,1</span><br></pre></td></tr></table></figure><h2 id="输出">输出</h2><p><a href="javascript:void(0);">复制</a></p><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">6</span><br></pre></td></tr></table></figure></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> arr=readline().split(<span class="string">','</span>).map(<span class="function"><span class="params">item</span>=&gt;</span><span class="built_in">parseInt</span>(item));</span><br><span class="line"><span class="keyword">let</span> len=arr.length;</span><br><span class="line"><span class="keyword">let</span> dp=<span class="keyword">new</span> <span class="built_in">Array</span>(len+<span class="number">1</span>).fill(<span class="number">0</span>);</span><br><span class="line">[dp[<span class="number">0</span>],dp[<span class="number">1</span>]] = [arr[<span class="number">0</span>],arr[<span class="number">1</span>]];</span><br><span class="line">arr[len]=<span class="number">0</span>;</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">2</span>;i&lt;=len;i++)&#123;</span><br><span class="line">    dp[i]=<span class="built_in">Math</span>.min(arr[i]+dp[i<span class="number">-1</span>],arr[i]+dp[i<span class="number">-2</span>]);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(dp[len]);</span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;h2 id=&quot;题目描述&quot;&gt;题目描述&lt;/h2&gt;
-&lt;p&gt;你需要爬上一个N层的楼梯，在爬楼梯过程中， 每阶楼梯需花费非负代价，第i阶楼梯花费代价表示为cost[i]， 一旦你付出了代价，你可以在该阶基础上往上爬一阶或两阶。&lt;/p&gt;
-&lt;p&gt;你可以从第 0 阶或
       
     
     </summary>

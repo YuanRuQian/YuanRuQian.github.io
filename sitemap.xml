@@ -2,6 +2,13 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   
   <url>
+    <loc>http://yoursite.com/2020/10/03/%E5%AE%9E%E7%8E%B0%E6%B7%B1%E6%8B%B7%E8%B4%9D/</loc>
+    
+    <lastmod>2020-10-03</lastmod>
+    
+  </url>
+  
+  <url>
     <loc>http://yoursite.com/2020/09/29/%E4%B8%80%E9%81%93%E7%AC%94%E8%AF%95%E9%A2%98%EF%BC%9AJS%E6%A8%A1%E7%89%88%E5%AD%97%E7%AC%A6%E4%B8%B2%E6%9B%BF%E6%8D%A2/</loc>
     
     <lastmod>2020-09-29</lastmod>
@@ -1481,7 +1488,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -1489,126 +1496,126 @@
   
   <url>
     <loc>http://yoursite.com/tags/interview/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/LeetCode/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/R/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Interview/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/DP/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Work/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Internship/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/CSS/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/OJ/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Brain-teaser/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/JavaScript/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Life/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Java/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Career/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Discrete-math/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Dev/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Hobby/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Algorithm/</loc>
-    <lastmod>2020-10-01</lastmod>
+    <lastmod>2020-10-03</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
