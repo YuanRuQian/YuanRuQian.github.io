@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-05T01:46:44.234Z</updated>
+  <updated>2020-10-06T02:01:02.001Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>instanceof 的原理与实现</title>
+    <link href="http://yoursite.com/2020/10/06/instanceof-%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/"/>
+    <id>http://yoursite.com/2020/10/06/instanceof-%E7%9A%84%E5%8E%9F%E7%90%86%E4%B8%8E%E5%AE%9E%E7%8E%B0/</id>
+    <published>2020-10-06T00:53:11.000Z</published>
+    <updated>2020-10-06T02:01:02.001Z</updated>
+    
+    <content type="html"><![CDATA[<p>先复习一下 <code>instanceof</code> 的背景：<a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof">MDN instanceof</a> &gt; The instanceof operator tests to see if the prototype property of a constructor appears anywhere in the prototype chain of an object. The return value is a boolean value.</p><p>所以就是原型链回溯 看看一路上是否有相等的 constructor 叻 🤔</p><p>下面是实现（<code>__proto__</code> 有点坑 不推荐这种直接拿私有属性的写法！！！请看最后） ⬇️ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyInstanceof = <span class="function">(<span class="params">left, right</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> leftPro = left.__proto__;</span><br><span class="line">    <span class="keyword">let</span> rightPro = right.prototype;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(leftPro === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(leftPro === rightPro) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        leftPro = leftPro.__proto__;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 测试一下 ⬇️ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">make, model, year</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.make = make;</span><br><span class="line">  <span class="built_in">this</span>.model = model;</span><br><span class="line">  <span class="built_in">this</span>.year = year;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> auto = <span class="keyword">new</span> Car(<span class="string">&#x27;Honda&#x27;</span>, <span class="string">&#x27;Accord&#x27;</span>, <span class="number">1998</span>);</span><br><span class="line"><span class="built_in">console</span>.log(MyInstanceof(auto, Car));</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure> ### ⚠️ <code>__proto__</code> 我看 <a href="Object.getPrototypeOf(left);">MDN</a> 的时候发现 <code>__proto__</code> 不再被推荐叻 所以我觉得 是不是改用 <code>Object.getPrototypeOf</code> 好点？？？ 毕竟 <code>left.__proto === Object.getPrototypeOf(left)</code> 结果是 <code>true</code></p><p>下面是改动后的实现 ⬇️ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> MyUpdatedInstanceof = <span class="function">(<span class="params">left, right</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">let</span> leftPro = <span class="built_in">Object</span>.getPrototypeOf(left);</span><br><span class="line">    <span class="keyword">let</span> rightPro = right.prototype;</span><br><span class="line">    <span class="keyword">while</span>(<span class="literal">true</span>) &#123;</span><br><span class="line">        <span class="keyword">if</span>(leftPro === <span class="literal">null</span>) <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        <span class="keyword">if</span>(leftPro === rightPro) <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">        leftPro = <span class="built_in">Object</span>.getPrototypeOf(left);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure> 测试一下 ⬇️ <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Car</span>(<span class="params">make, model, year</span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.make = make;</span><br><span class="line">  <span class="built_in">this</span>.model = model;</span><br><span class="line">  <span class="built_in">this</span>.year = year;</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">const</span> newAuto = <span class="keyword">new</span> Car(<span class="string">&#x27;Honda&#x27;</span>, <span class="string">&#x27;Accord&#x27;</span>, <span class="number">1998</span>);</span><br><span class="line"><span class="built_in">console</span>.log(MyUpdatedInstanceof(newAuto, Car));</span><br><span class="line"><span class="comment">// true</span></span><br></pre></td></tr></table></figure></p>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;p&gt;先复习一下 &lt;code&gt;instanceof&lt;/code&gt; 的背景：&lt;a href=&quot;https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/instanceof&quot;&gt;MDN in
+      
+    
+    </summary>
+    
+    
+    
+      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
+    
+  </entry>
   
   <entry>
     <title>实现debounce/throttle</title>
