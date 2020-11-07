@@ -165,7 +165,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -173,42 +173,42 @@
   
   <url>
     <loc>http://yoursite.com/tags/LeetCode/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/R/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/JavaScript/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Java/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Career/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/React/</loc>
-    <lastmod>2020-11-06</lastmod>
+    <lastmod>2020-11-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
