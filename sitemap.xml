@@ -16,13 +16,6 @@
   </url>
   
   <url>
-    <loc>http://yoursite.com/2020/12/12/heatmap-js-%E6%BA%90%E7%A0%81%E5%AD%A6%E4%B9%A0%E7%AC%94%E8%AE%B0/</loc>
-    
-    <lastmod>2020-12-12</lastmod>
-    
-  </url>
-  
-  <url>
     <loc>http://yoursite.com/2020/12/05/%E5%AE%9E%E7%8E%B0-Array-prototype-reduce/</loc>
     
     <lastmod>2020-12-05</lastmod>
@@ -186,7 +179,7 @@
 
   <url>
     <loc>http://yoursite.com/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
@@ -194,56 +187,42 @@
   
   <url>
     <loc>http://yoursite.com/tags/LeetCode/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/R/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/JavaScript/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Java/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/Career/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
   
   <url>
     <loc>http://yoursite.com/tags/React/</loc>
-    <lastmod>2020-12-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/JavaDcript/</loc>
-    <lastmod>2020-12-18</lastmod>
-    <changefreq>daily</changefreq>
-    <priority>0.6</priority>
-  </url>
-  
-  <url>
-    <loc>http://yoursite.com/tags/Design/</loc>
-    <lastmod>2020-12-18</lastmod>
+    <lastmod>2020-12-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.6</priority>
   </url>
