@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-18T13:57:09.523Z</updated>
+  <updated>2021-03-19T17:08:25.465Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>FP 风格初试</title>
+    <link href="http://yoursite.com/2021/03/19/FP-%E9%A3%8E%E6%A0%BC%E5%88%9D%E8%AF%95/"/>
+    <id>http://yoursite.com/2021/03/19/FP-%E9%A3%8E%E6%A0%BC%E5%88%9D%E8%AF%95/</id>
+    <published>2021-03-19T15:02:21.000Z</published>
+    <updated>2021-03-19T17:08:25.465Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="实现遍历"><a class="markdownIt-Anchor" href="#实现遍历"></a> 实现遍历</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> myForEach = <span class="function">(<span class="params"> arr, cb </span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length === <span class="number">0</span>) <span class="keyword">return</span>;</span><br><span class="line">    cb(arr[<span class="number">0</span>]);</span><br><span class="line">    myForEach( arr.slice(<span class="number">1</span>), cb);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> logger = <span class="function"><span class="params">obj</span> =&gt;</span> <span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="string">&#x27;a&#x27;</span>,<span class="string">&#x27;b&#x27;</span>,<span class="string">&#x27;c&#x27;</span>];</span><br><span class="line">myForEach( arr, logger );</span><br><span class="line"><span class="comment">// a</span></span><br><span class="line"><span class="comment">// b</span></span><br><span class="line"><span class="comment">// c</span></span><br></pre></td></tr></table></figure><p>为了确保数据不可变 每次递归传入 slice 后的新数组</p><h1 id="反转字符串"><a class="markdownIt-Anchor" href="#反转字符串"></a> 反转字符串</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> reverse = <span class="function"><span class="params">arr</span> =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> (arr.length&lt;=<span class="number">1</span>) ? arr : reverse(arr.slice(<span class="number">1</span>, arr.length)) + arr[<span class="number">0</span>]; </span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = <span class="string">&#x27;abc&#x27;</span>;</span><br><span class="line">reverse(arr);</span><br><span class="line"><span class="comment">// &quot;cba&quot;</span></span><br></pre></td></tr></table></figure><h1 id="快排"><a class="markdownIt-Anchor" href="#快排"></a> 快排</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> quickSort = <span class="function">(<span class="params">arr</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length&lt;=<span class="number">1</span>) <span class="keyword">return</span> arr;</span><br><span class="line">    <span class="keyword">const</span> [pivot, ...rest] = arr;</span><br><span class="line">    <span class="keyword">const</span> less = rest.filter(<span class="function"><span class="params">x</span> =&gt;</span> x&lt;=pivot);</span><br><span class="line">    <span class="keyword">const</span> more = rest.filter(<span class="function"><span class="params">x</span> =&gt;</span> x&gt;pivot);</span><br><span class="line">    <span class="keyword">return</span> [...quickSort(less),pivot,...quickSort(more)];</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">4</span>];</span><br><span class="line">quickSort(arr);</span><br><span class="line"><span class="comment">// [1,3,4,6]</span></span><br></pre></td></tr></table></figure><h1 id="快排进化版"><a class="markdownIt-Anchor" href="#快排进化版"></a> 快排（进化版）</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> quickSort = <span class="function">(<span class="params">arr,next</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">if</span>(arr.length&lt;=<span class="number">1</span>) <span class="keyword">return</span> next(arr);</span><br><span class="line">    <span class="keyword">const</span> [pivot, ...rest] = arr;</span><br><span class="line">    <span class="keyword">const</span> less = rest.filter(<span class="function"><span class="params">x</span> =&gt;</span> x&lt;=pivot);</span><br><span class="line">    <span class="keyword">const</span> more = rest.filter(<span class="function"><span class="params">x</span> =&gt;</span> x&gt;pivot);</span><br><span class="line">    quickSort(less, <span class="function">(<span class="params">sortedLess</span>) =&gt;</span> &#123;</span><br><span class="line">        quickSort(more, <span class="function">(<span class="params">sortedMore</span>) =&gt;</span> &#123;</span><br><span class="line">            next([...sortedLess,pivot,...sortedMore]);</span><br><span class="line">        &#125;)</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> next = <span class="function">(<span class="params">obj</span>) =&gt;</span> <span class="built_in">console</span>.log(obj);</span><br><span class="line"><span class="keyword">const</span> arr = [<span class="number">3</span>,<span class="number">6</span>,<span class="number">1</span>,<span class="number">4</span>];</span><br><span class="line">quickSort(arr,next);</span><br><span class="line"><span class="comment">// [1,3,4,6]</span></span><br></pre></td></tr></table></figure><h1 id="斐波那契数列"><a class="markdownIt-Anchor" href="#斐波那契数列"></a> 斐波那契数列</h1><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> fib = <span class="function">(<span class="params">n,result=<span class="number">1</span>,prev=<span class="number">0</span></span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="keyword">return</span> n===<span class="number">0</span> ? prev : n===<span class="number">1</span> ? result : fib(n<span class="number">-1</span>,prev+result,result);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// 测试</span></span><br><span class="line">fib(<span class="number">1</span>);</span><br><span class="line"><span class="comment">// 1</span></span><br><span class="line">fib(<span class="number">4</span>);</span><br><span class="line"><span class="comment">// 3</span></span><br><span class="line">fib(<span class="number">5</span>);</span><br><span class="line"><span class="comment">// 5</span></span><br></pre></td></tr></table></figure>]]></content>
+    
+    <summary type="html">
+    
+      
+      
+        &lt;h1 id=&quot;实现遍历&quot;&gt;&lt;a class=&quot;markdownIt-Anchor&quot; href=&quot;#实现遍历&quot;&gt;&lt;/a&gt; 实现遍历&lt;/h1&gt;
+&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;p
+      
+    
+    </summary>
+    
+    
+    
+      <category term="Functional programming" scheme="http://yoursite.com/tags/Functional-programming/"/>
+    
+  </entry>
   
   <entry>
     <title>实现 Number.prototype.toLocaleString() 的金额格式化功能</title>
@@ -487,33 +512,6 @@
 &lt;p&gt;每一位上出现某个元素的概率都相等&lt;/p&gt;
 &lt;/blockquote&gt;
 &lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line
-      
-    
-    </summary>
-    
-    
-    
-      <category term="JavaScript" scheme="http://yoursite.com/tags/JavaScript/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>实现一个简单的红绿灯</title>
-    <link href="http://yoursite.com/2020/08/08/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%A2%E7%BB%BF%E7%81%AF/"/>
-    <id>http://yoursite.com/2020/08/08/%E5%AE%9E%E7%8E%B0%E4%B8%80%E4%B8%AA%E7%AE%80%E5%8D%95%E7%9A%84%E7%BA%A2%E7%BB%BF%E7%81%AF/</id>
-    <published>2020-08-08T05:23:49.000Z</published>
-    <updated>2020-08-08T07:00:40.583Z</updated>
-    
-    <content type="html"><![CDATA[<blockquote><p>打印red，停1s,打印yellow,停2s,打印green,停4s</p></blockquote><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// async await</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">sleep</span>(<span class="params">duration</span>) </span>&#123;</span><br><span class="line"><span class="keyword">return</span> <span class="keyword">new</span> <span class="built_in">Promise</span>(<span class="function"><span class="params">resolve</span> =&gt;</span> &#123;</span><br><span class="line">setTimeout(resolve, duration);</span><br><span class="line">&#125;)</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">changeColor</span>(<span class="params">color, duration</span>) </span>&#123;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'traffic-light '</span>, color);</span><br><span class="line"><span class="keyword">await</span> sleep(duration);</span><br><span class="line">&#125;</span><br><span class="line"><span class="keyword">async</span> <span class="function"><span class="keyword">function</span> <span class="title">show</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> i=<span class="number">0</span></span><br><span class="line"><span class="keyword">while</span> (i++<span class="xml"><span class="tag">&lt;<span class="name">5)</span> &#123;</span></span></span><br><span class="line"><span class="xml">await changeColor('red', 1000);</span></span><br><span class="line"><span class="xml">await changeColor('yellow', 2000);</span></span><br><span class="line"><span class="xml">await changeColor('green', 4000);</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"><span class="xml">&#125;</span></span><br><span class="line"></span><br><span class="line"><span class="xml">show()</span></span><br></pre></td></tr></table></figure>]]></content>
-    
-    <summary type="html">
-    
-      
-      
-        &lt;blockquote&gt;
-&lt;p&gt;打印red，停1s,打印yellow,停2s,打印green,停4s&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;figure class=&quot;highlight javascript&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre
       
     
     </summary>
